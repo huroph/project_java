@@ -39,7 +39,7 @@ class DAOMap extends DAOEntity<Map> {
     public Map find(int id) {
         Map map = new Map();
         try {
-            final String sql = "{call getSchemaByMap(?)}";
+            final String sql = "{call map(?)}";
             final CallableStatement call = this.getConnection().prepareCall(sql);
             call.setInt(1, id);
             call.execute();
@@ -49,27 +49,26 @@ class DAOMap extends DAOEntity<Map> {
             ArrayList<String> line = new ArrayList<>();
 
             while (resultSet.next()){
-                line.add(resultSet.getString("schema"));
+                line.add(resultSet.getString("map"));
                 System.out.println(line.get(nline));
                 nline++;
             }
                 map = new Map(id, nline,line.get(0).length());
-
             // Create map blocks
             for(int y = 0;y<nline;y++){
                 for(int x = 0;x<line.get(y).length();x++){
                     BlockType type;
                     switch(line.get(y).charAt(x)){
-                        case 'V':
+                        case 'v':
                             type = BlockType.EMPTY;
                             break;
-                        case 'C':
+                        case '0':
                             type = BlockType.ROCK;
                             break;
-                        case 'T':
+                        case '.':
                             type = BlockType.DIRT;
                             break;
-                        case 'X':
+                        case '=':
                             type = BlockType.WALL;
                             break;
                         case 'D':
@@ -85,14 +84,12 @@ class DAOMap extends DAOEntity<Map> {
                 // txt char line
                 map.setSchema(y,line.get(y));
             }
-
             return map;
         } catch (final SQLException e) {
             e.printStackTrace();
         }
         return null;
     }
-
     @Override
     public Map find(String code) {
         return null;
