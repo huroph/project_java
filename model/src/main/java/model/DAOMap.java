@@ -62,7 +62,7 @@ class DAOMap extends DAOEntity<Map> {
                         case 'v':
                             type = BlockType.EMPTY;
                             break;
-                        case 'D':
+                        case '0':
                             type = BlockType.ROCK;
                             break;
                         case '.':
@@ -71,7 +71,7 @@ class DAOMap extends DAOEntity<Map> {
                         case '=':
                             type = BlockType.WALL;
                             break;
-                        case '0':
+                        case 'D':
                             type = BlockType.DIAMOND;
                             break;
                         default:
