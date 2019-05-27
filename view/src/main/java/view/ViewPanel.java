@@ -50,7 +50,7 @@ class ViewPanel extends JPanel implements Observer {
 		//for each blocks in the map
 		Map map = viewFrame.getModel().getMap();
 		Block[][] blocks = map.getBlocks();
-		for(int y = 10; y<map.getHeight(); y++){
+		for(int y = 500; y<map.getHeight(); y++){
 			for(int x = 0;x<map.getLenght();x++){
 				//Affichage des sprites
 				switch (blocks[y][x].getType()){
