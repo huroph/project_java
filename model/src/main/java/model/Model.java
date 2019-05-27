@@ -31,7 +31,7 @@ public final class Model extends Observable implements IModel {
 	private Player player;
 	private int startX = RealPos(2);
 	private int startY = RealPos(2);
-	private int timer = 500;
+	private int timer = 5;
 	private int sleep;
 
 	/**
@@ -41,7 +41,6 @@ public final class Model extends Observable implements IModel {
 		this.helloWorld = new HelloWorld();
 		this.loadMap(mapID);
 		this.player = new Player(startX,startY);
-		this.timer();
 	}
 
 	/**
@@ -130,6 +129,7 @@ public final class Model extends Observable implements IModel {
 		} catch (final SQLException e) {
 			e.printStackTrace();
 		}
+		timer();
 	}
 
 
@@ -161,24 +161,24 @@ public final class Model extends Observable implements IModel {
 
 
 	public void timer() {
-
-		int i;
-
-
-		for (i = 500; i <=0 ; i--) {
+		new Thread(() -> {
+			for (int i = 5; i >= 0; i--) {
 
 
-			try {
-				sleep(1000);
-				timer--;
-			} catch (InterruptedException e) {
-				e.printStackTrace();
+				try {
+					Thread.sleep(1000);
+					timer--;
+					this.setTimer(timer);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
 			}
+		}).start();
+	}
 
 
-
-		}
-
+	public void setTimer(int timer) {
+		this.timer = timer;
 	}
 
 	public int getTimer() {

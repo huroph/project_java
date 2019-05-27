@@ -15,7 +15,8 @@ import javax.swing.*;
 class ViewPanel extends JPanel implements Observer {
 
 
-	private ViewFrame					viewFrame;
+	private ViewFrame viewFrame;
+	private int timer = 500;
 
 	private static final long	serialVersionUID	= -998294702363713521L;
 
@@ -73,14 +74,23 @@ class ViewPanel extends JPanel implements Observer {
 		}
 
 		//ImageIcon img = new ImageIcon("src")
-		System.out.println(viewFrame.getModel().getPlayer().getPosY());
+		//System.out.println(viewFrame.getModel().getPlayer().getPosY());
 		graphics.drawImage(viewFrame.getModel().getPlayer().getPlayerSprites(0),viewFrame.getModel().getPlayer().getPosX(),viewFrame.getModel().getPlayer().getPosY(), this);
-		repaint();
 		Font font = new Font ("Courier",Font.BOLD,20);
 		graphics.setFont(font);
-
 		graphics.drawString("timer:"+viewFrame.getModel().getTimer(),10,340);
+
+		if(viewFrame.getModel().getTimer()<=0) {
+			viewFrame.printMessage("Game Over");
+			viewFrame.dispose();
+		}
+
+		repaint();
+
+
 	}
+
+
 
 
 }
