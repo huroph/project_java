@@ -9,6 +9,8 @@ import contract.IController;
 import contract.IModel;
 import contract.IView;
 
+// Salut j'ai réussi
+
 /**
  * The Class View.
  *
