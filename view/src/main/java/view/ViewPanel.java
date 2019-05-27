@@ -53,7 +53,7 @@ class ViewPanel extends JPanel implements Observer {
 	@Override
 	protected void paintComponent(final Graphics graphics) {
 		Graphics2D g2 = (Graphics2D)graphics;
-		graphics.clearRect(0, 0, this.getWidth(), this.getHeight());
+		graphics.clearRect(100, 0, this.getWidth(), this.getHeight());
 		//for each blocks in the map
 		Map map = viewFrame.getModel().getMap();
 		Block[][] blocks = map.getBlocks();
