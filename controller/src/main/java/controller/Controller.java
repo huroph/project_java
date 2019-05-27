@@ -63,18 +63,6 @@ public final class Controller implements IController {
 	private void setModel(final IModel model) {
 		this.model = model;
 	}
-
-	/**
-     * Order perform.
-     *
-     * @param controllerOrder
-     *            the controller order
-     */
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see contract.IController#orderPerform(contract.ControllerOrder)
-	 */
 	public void orderPerform(final ControllerOrder controllerOrder) {
 		switch (controllerOrder) {
 			case UP:

@@ -39,18 +39,16 @@ class ViewPanel extends JPanel implements Observer {
 		this.repaint();
 	}
 
-	//((this.getHeight()/2)-(map.getHeight()/2))
-	//((this.getWidth()/2)-(map.getLenght()/2))
 
 	@Override
 	protected void paintComponent(final Graphics graphics) {
 		Graphics2D g2 = (Graphics2D)graphics;
 
 		graphics.clearRect(0, 0, this.getWidth(), this.getHeight());
-		//for each blocks in the map
+
 		Map map = viewFrame.getModel().getMap();
 		Block[][] blocks = map.getBlocks();
-		for(int y = 500; y<map.getHeight(); y++){
+		for(int y = 0; y<map.getHeight(); y++){
 			for(int x = 0;x<map.getLenght();x++){
 				//Affichage des sprites
 				switch (blocks[y][x].getType()){
@@ -73,8 +71,7 @@ class ViewPanel extends JPanel implements Observer {
 			}
 		}
 
-		//ImageIcon img = new ImageIcon("src")
-		//System.out.println(viewFrame.getModel().getPlayer().getPosY());
+
 		graphics.drawImage(viewFrame.getModel().getPlayer().getPlayerSprites(0),viewFrame.getModel().getPlayer().getPosX(),viewFrame.getModel().getPlayer().getPosY(), this);
 		Font font = new Font ("Courier",Font.BOLD,20);
 		graphics.setFont(font);

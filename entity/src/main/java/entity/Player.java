@@ -64,12 +64,7 @@ public class Player extends Entity {
     }
 
 
-    /**
-     * Sets the message.
-     *
-     * @param content
-     *          the new message
-     */
+
 
     public void setSprites(Image[] sprites) {
         this.sprites = sprites;

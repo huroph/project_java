@@ -30,8 +30,8 @@ public final class Model extends Observable implements IModel {
 	private int mapID = 3;
 	private Player player;
 	private int startX = RealPos(2);
-	private int startY = RealPos(2);
-	private int timer = 5;
+	private int startY = RealPos(1);
+	private int timer = 500;
 	private int sleep;
 
 	/**
@@ -69,17 +69,7 @@ public final class Model extends Observable implements IModel {
 		this.notifyObservers();
 	}
 
-	/**
-	 * Load hello world.
-	 *
-	 * @param code
-	 *            the code
-	 */
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see contract.IModel#getMessage(java.lang.String)
-	 */
+
 	public void loadHelloWorld(final String code) {
 		try {
 			final DAOHelloWorld daoHelloWorld = new DAOHelloWorld(DBConnection.getInstance().getConnection());
@@ -90,16 +80,7 @@ public final class Model extends Observable implements IModel {
 	}
 
 
-	/**
-	 * Gets the map.
-	 *
-	 * @return the map
-	 */
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see contract.IModel#getMessage()
-	 */
+
 	public Map getMap() {
 		return this.map;
 	}
@@ -162,7 +143,7 @@ public final class Model extends Observable implements IModel {
 
 	public void timer() {
 		new Thread(() -> {
-			for (int i = 5; i >= 0; i--) {
+			for (int i = 500; i >= 0; i--) {
 
 
 				try {
