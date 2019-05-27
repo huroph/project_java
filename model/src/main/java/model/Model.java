@@ -25,10 +25,12 @@ public final class Model extends Observable implements IModel {
 	private HelloWorld helloWorld;
 
 	private Map map;
-	private int mapID = 2;
+	private int mapID = 3;
 	private Player player;
 	private int startX = RealPos(2);
 	private int startY = RealPos(2);
+	private int timer;
+	private int sleep;
 
 	/**
 	 * Instantiates a new model.
@@ -153,4 +155,20 @@ public final class Model extends Observable implements IModel {
 	 *            the new player
 	 */
 	public void setPlayer(Player player){this.player = player;}
-}
+
+/*
+	public void timer() {
+
+		int i;
+
+		for (i = 500; i ==0 ; i--) {
+
+			System.out.println("" + i);
+			static void sleep(long 500);
+
+
+		}
+
+	}*/
+
+	}
