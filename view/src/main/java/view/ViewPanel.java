@@ -10,34 +10,22 @@ import java.util.Observer;
 
 import javax.swing.*;
 
-/**
- * The Class ViewPanel.
- *
- * @author Jean-Aymeric Diet
- */
+
+
 class ViewPanel extends JPanel implements Observer {
 
-	/** The view frame. */
+
 	private ViewFrame					viewFrame;
-	/** The Constant serialVersionUID. */
+
 	private static final long	serialVersionUID	= -998294702363713521L;
 
-	/**
-	 * Instantiates a new view panel.
-	 *
-	 * @param viewFrame
-	 *          the view frame
-	 */
+
 	public ViewPanel(final ViewFrame viewFrame) {
 		this.setViewFrame(viewFrame);
 		viewFrame.getModel().getObservable().addObserver(this);
 	}
 
-	/**
-	 * Gets the view frame.
-	 *
-	 * @return the view frame
-	 */
+
 	private ViewFrame getViewFrame() {
 		return this.viewFrame;
 	}
@@ -53,6 +41,7 @@ class ViewPanel extends JPanel implements Observer {
 	@Override
 	protected void paintComponent(final Graphics graphics) {
 		Graphics2D g2 = (Graphics2D)graphics;
+
 		graphics.clearRect(0, 0, this.getWidth(), this.getHeight());
 		//for each blocks in the map
 		Map map = viewFrame.getModel().getMap();
@@ -83,8 +72,10 @@ class ViewPanel extends JPanel implements Observer {
 		System.out.println(viewFrame.getModel().getPlayer().getPosY());
 		graphics.drawImage(viewFrame.getModel().getPlayer().getPlayerSprites(0),viewFrame.getModel().getPlayer().getPosX(),viewFrame.getModel().getPlayer().getPosY(), this);
 		repaint();
+		Font font = new Font ("Courier",Font.BOLD,20);
+		graphics.setFont(font);
 
-		graphics.drawString("bonjour",10,20);
+		graphics.drawString("timer:"+viewFrame.getModel().getTimer(),10,340);
 	}
 
 

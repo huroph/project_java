@@ -11,6 +11,8 @@ import entity.Player;
 import javax.swing.*;
 import javax.swing.text.View;
 
+import static java.lang.Thread.sleep;
+
 /**
  * The Class Model.
  *
@@ -29,7 +31,7 @@ public final class Model extends Observable implements IModel {
 	private Player player;
 	private int startX = RealPos(2);
 	private int startY = RealPos(2);
-	private int timer;
+	private int timer = 500;
 	private int sleep;
 
 	/**
@@ -39,6 +41,7 @@ public final class Model extends Observable implements IModel {
 		this.helloWorld = new HelloWorld();
 		this.loadMap(mapID);
 		this.player = new Player(startX,startY);
+		this.timer();
 	}
 
 	/**
@@ -156,19 +159,29 @@ public final class Model extends Observable implements IModel {
 	 */
 	public void setPlayer(Player player){this.player = player;}
 
-/*
+
 	public void timer() {
 
 		int i;
 
-		for (i = 500; i ==0 ; i--) {
 
-			System.out.println("" + i);
-			static void sleep(long 500);
+		for (i = 500; i <=0 ; i--) {
+
+
+			try {
+				sleep(1000);
+				timer--;
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+
 
 
 		}
 
-	}*/
-
 	}
+
+	public int getTimer() {
+		return timer;
+	}
+}
