@@ -127,27 +127,6 @@ class ViewFrame extends JFrame implements KeyListener {
 	 *          the model
 	 */
 	private void buildViewFrame(final IModel model) {
-
-		this.addWindowListener(new WindowAdapter() {
-			@Override
-			public void windowOpened(WindowEvent e) {
-				// on doit utiliser un thread pour éviter de bloquer l'IHM
-				new Thread() {
-
-					public void run() {
-						URL url = DemoFrameMusic.class.getResource("music.mp3");
-						try (InputStream audioIn = url.openStream()) {
-							Player clip = new Player(audioIn);
-							clip.play();
-						} catch (IOException | JavaLayerException e1) {
-							e1.printStackTrace();
-						}
-					};
-
-				}.start();
-			}
-		});
-
 		this.setModel(model);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setResizable(false);
