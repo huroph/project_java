@@ -62,4 +62,7 @@ public interface IModel {
 	void timer();
 
 	int getTimer();
+
+	public void verticalMove(int sens);
+	public void horizontalMove(int sens);
 }
