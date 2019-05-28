@@ -132,7 +132,7 @@ public final class Controller implements IController {
 	}
 
 	private void horizontalMove(int sens) {
-		if (this.model.getMap().getBlockTypeAt(model.IndexPos(model.getPlayer().getPosX()), model.IndexPos(model.getPlayer().getPosY() + sens)) != BlockType.WALL) {
+		if (this.model.getMap().getBlockTypeAt(model.IndexPos(model.getPlayer().getPosX()) + sens, model.IndexPos(model.getPlayer().getPosY())) != BlockType.WALL) {
 			System.out.println(model.IndexPos((int) model.getPlayer().getPosX()) + " : " + model.IndexPos(model.getPlayer().getPosY() - model.RealPos(1)));
 			System.out.println(model.getPlayer().getPosX() + sens);
 			model.getPlayer().setPosX(model.getPlayer().getPosX() + sens);
