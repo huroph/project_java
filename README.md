@@ -8,11 +8,11 @@ Projet de création d'un abandonware lors de la 1ières années Exia-Cesi.
 
 **V : Vide**
 
-**C : Rochets**
+*** : Rochets**
 
-**t : Terre**
+** : Terre**
 
-**X : bordure de map**
+**= : bordure de map**
 
 ---
 ##Connexion a la base de donnée
@@ -20,8 +20,8 @@ IP : 54.37.86.44
 
 Port : 3306
 
-Data Base : _projet_uml_
+Data Base : level_dash
 
-Admin : _admini_
+Admin :root
 
-Password : _Kru0!2g7_
+Password :
