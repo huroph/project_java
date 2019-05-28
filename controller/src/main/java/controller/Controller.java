@@ -47,11 +47,6 @@ public final class Controller implements IController {
 		this.view.printMessage("Appuyer sur les flèches HAUT, BAS, GAUCHE, DROITE, pour déplacer le personnage.");
 	}
 
-	@Override
-	public void orderPerform(ControllerOrder controllerOrder) {
-
-	}
-
 	/**
 	 * Sets the view.
 	 *
