@@ -2,7 +2,7 @@ package contract;
 
 import java.util.Observable;
 
-import entity.HelloWorld;
+
 import entity.Map;
 import entity.Player;
 
@@ -35,7 +35,7 @@ public interface IModel {
 	 *
 	 * @return the helloworld entity
 	 */
-	HelloWorld getHelloWorld();
+
 
 	/**
 	 * Load the message.
@@ -43,7 +43,7 @@ public interface IModel {
 	 * @param code
 	 *          the code
 	 */
-	void loadHelloWorld(String code);
+
 
 
 	int RealPos(int index);
@@ -62,4 +62,7 @@ public interface IModel {
 	void timer();
 
 	int getTimer();
+
+	public void verticalMove(int sens);
+	public void horizontalMove(int sens);
 }

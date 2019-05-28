@@ -1,10 +1,10 @@
 package model;
-
 import java.sql.SQLException;
 import java.util.Observable;
 
 import contract.IModel;
-import entity.HelloWorld;
+import entity.BlockType;
+
 import entity.Map;
 import entity.Player;
 
@@ -14,19 +14,9 @@ import javax.swing.text.View;
 import static java.lang.Thread.sleep;
 import sun.audio.*;
 
-/**
- * The Class Model.
- *
- * @author Jean-Aymeric Diet
- */
 public final class Model extends Observable implements IModel {
 	private final int OFFSET = 16;
-
-
-
-	/** The helloWorld. */
-	private HelloWorld helloWorld;
-
+	
 	private Map map;
 	private int mapID = 3;
 	private Player player;
@@ -34,51 +24,17 @@ public final class Model extends Observable implements IModel {
 	private int startY = RealPos(1);
 	private int timer = 500;
 	private int sleep;
-
 	/**
 	 * Instantiates a new model.
 	 */
 	public Model() {
-		this.helloWorld = new HelloWorld();
+
 		this.loadMap(mapID);
 		this.player = new Player(startX,startY);
 	}
 
-	/**
-     * Gets the hello world.
-     *
-     * @return the hello world
-     */
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see contract.IModel#getMessage()
-	 */
-	public HelloWorld getHelloWorld() {
-		return this.helloWorld;
-	}
-
-	/**
-     * Sets the hello world.
-     *
-     * @param helloWorld
-     *            the new hello world
-     */
-	private void setHelloWorld(final HelloWorld helloWorld) {
-		this.helloWorld = helloWorld;
-		this.setChanged();
-		this.notifyObservers();
-	}
 
 
-	public void loadHelloWorld(final String code) {
-		try {
-			final DAOHelloWorld daoHelloWorld = new DAOHelloWorld(DBConnection.getInstance().getConnection());
-			this.setHelloWorld(daoHelloWorld.find(code));
-		} catch (final SQLException e) {
-			e.printStackTrace();
-		}
-	}
 
 
 
@@ -168,6 +124,25 @@ public final class Model extends Observable implements IModel {
 	}
 // méthode music
 
+
+	//Deplacements
+	public void verticalMove( int sens){
+		if (this.getMap().getBlockTypeAt(this.IndexPos(this.getPlayer().getPosX()), this.IndexPos(this.getPlayer().getPosY() + sens)) != BlockType.WALL) {
+			System.out.println(this.IndexPos((int) this.getPlayer().getPosX()) + " : " + this.IndexPos(this.getPlayer().getPosY() + sens));
+			System.out.println(this.getPlayer().getPosY() + sens);
+			this.getPlayer().setPosY(this.getPlayer().getPosY() + sens);
+			System.out.println(this.getPlayer().getPosY());
+		}
+	}
+
+	public void horizontalMove( int sens){
+		if (this.getMap().getBlockTypeAt(this.IndexPos(this.getPlayer().getPosX() + sens), this.IndexPos(this.getPlayer().getPosY())) != BlockType.WALL) {
+			System.out.println(this.IndexPos((int) this.getPlayer().getPosX() + sens) + " : " + this.IndexPos(this.getPlayer().getPosY()));
+			System.out.println(this.getPlayer().getPosX() + sens);
+			this.getPlayer().setPosX(this.getPlayer().getPosX() + sens);
+			System.out.println(this.getPlayer().getPosX());
+		}
+	}
 
 	}
 
