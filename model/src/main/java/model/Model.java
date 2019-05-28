@@ -12,6 +12,7 @@ import javax.swing.*;
 import javax.swing.text.View;
 
 import static java.lang.Thread.sleep;
+import sun.audio.*;
 
 /**
  * The Class Model.
@@ -164,5 +165,10 @@ public final class Model extends Observable implements IModel {
 
 	public int getTimer() {
 		return timer;
+	}
+// méthode music
+	public static void music()
+	{
+
 	}
 }
