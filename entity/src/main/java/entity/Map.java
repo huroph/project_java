@@ -133,6 +133,10 @@ public class Map extends Entity {
         return blocks[y][x];
     }
 
+    public BlockType getBlockTypeAt(int x, int y){
+        return this.blocks[y][x].getType();
+    }
+
 
     public void setBlocks(Block[][] blocks) {
         this.blocks = blocks;

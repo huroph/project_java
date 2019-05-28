@@ -1,4 +1,4 @@
-package view;
+/*package view;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -33,4 +33,4 @@ public class Music extends JavaSoundAudioClip {
         }
     }
 
-}
+}*/
