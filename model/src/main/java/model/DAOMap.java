@@ -77,6 +77,9 @@ class DAOMap extends DAOEntity<Map> {
                         default:
                             type = BlockType.WALL;
                             break;
+                        case 'S':
+                            type = BlockType.END;
+                            break;
                     }
                     Block block = new Block(x*16,y*16,type);
                     map.setBlocks(y, x, block);
