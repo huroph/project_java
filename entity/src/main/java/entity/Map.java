@@ -33,7 +33,7 @@ public class Map extends Entity {
         // fill sprites array
         try {
             spriteSheet = ImageIO.read(new File("src/level.png"));
-            sprites = new Image[5];
+            sprites = new Image[6];
             // Wall
             sprites[0] = spriteSheet.getSubimage(0*16, 0 * 16, 16, 16);
             // Dirt
@@ -44,6 +44,8 @@ public class Map extends Entity {
             sprites[3] = spriteSheet.getSubimage(3*16, 0 * 16, 16, 16);
             // DIAMOND
             sprites[4] = spriteSheet.getSubimage(5*16, 0 * 16, 16, 16);
+            //sortieverrouiller
+            sprites[5] = spriteSheet.getSubimage(8*16, 0 * 16, 16, 16);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -134,7 +136,11 @@ public class Map extends Entity {
     }
 
     public BlockType getBlockTypeAt(int x, int y){
-        return this.blocks[y][x].getType();
+        return this.blocks[y][x].type;
+    }
+
+    public void setBlockTypeAt(int x, int y, BlockType t){
+        this.blocks[y][x].type = t;
     }
 
 

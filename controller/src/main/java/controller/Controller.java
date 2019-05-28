@@ -66,6 +66,27 @@ public final class Controller implements IController {
 	}
 
 	public void orderPerform(final ControllerOrder controllerOrder) {
+		switch (controllerOrder) {
+			case UP:
+				this.model.verticalMove(-16);
+				break;
+			case DOWN:
+				this.model.verticalMove(16);
+				break;
+			case LEFT:
+				this.model.horizontalMove(-16);
+				break;
+			case RIGHT:
+				this.model.horizontalMove(16);
+				break;
+			case NOTHING:
+				break;
+		}
+        this.model.dig();
+
+	}
+
+}
 
 		/*
 		Player p = model.getPlayer();
@@ -104,24 +125,8 @@ public final class Controller implements IController {
 		*/
 
 
-		switch (controllerOrder) {
-			case UP:
-				this.model.verticalMove(-16);
-				break;
-			case DOWN:
-				this.model.verticalMove(16);
-				break;
-			case LEFT:
-				this.model.horizontalMove(-16);
-				break;
-			case RIGHT:
-				this.model.horizontalMove(16);
-				break;
-			case NOTHING:
-				break;
-		}
-	}
 
-	public void dig();
 
-}
+
+
+

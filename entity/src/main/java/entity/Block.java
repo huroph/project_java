@@ -2,7 +2,7 @@ package entity;
 
 public class Block extends Map{
     private int posX, posY;
-    private BlockType type;
+    public BlockType type;
 
     public Block(int x, int y, BlockType t){
         this.posX = x;
@@ -26,11 +26,4 @@ public class Block extends Map{
         this.posY = posY;
     }
 
-    public BlockType getType() {
-        return type;
-    }
-
-    public void setType(BlockType type) {
-        this.type = type;
-    }
 }

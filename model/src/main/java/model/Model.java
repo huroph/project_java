@@ -136,7 +136,7 @@ public final class Model extends Observable implements IModel {
 		}
 	}
 
-	public void horizontalMove( int sens){
+	public void horizontalMove(int sens){
 		if (this.getMap().getBlockTypeAt(this.IndexPos(this.getPlayer().getPosX() + sens), this.IndexPos(this.getPlayer().getPosY())) != BlockType.WALL) {
 			System.out.println(this.IndexPos((int) this.getPlayer().getPosX() + sens) + " : " + this.IndexPos(this.getPlayer().getPosY()));
 			System.out.println(this.getPlayer().getPosX() + sens);
@@ -144,10 +144,18 @@ public final class Model extends Observable implements IModel {
 			System.out.println(this.getPlayer().getPosX());
 		}
 	}
-	public void nbrDiamonds(int)
-	{
+	public void nbrDiamonds(int){
 
 	}
+
+	//creuser-récuppérer
+	public void dig(){
+		/*if (this.getMap().getBlockTypeAt(this.IndexPos(this.getPlayer().getPosX()), this.IndexPos(this.getPlayer().getPosY())) == BlockType.DIAMOND) {
+			//nbrDIAMOND --;
+		}*/
+		this.getMap().getBlockTypeAt(this.IndexPos(this.getPlayer().getPosX()), this.IndexPos(this.getPlayer().getPosY())) = BlockType.EMPTY;
 	}
 
+
+}
 
