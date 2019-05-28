@@ -134,7 +134,11 @@ public class Map extends Entity {
     }
 
     public BlockType getBlockTypeAt(int x, int y){
-        return this.blocks[y][x].getType();
+        return this.blocks[y][x].type;
+    }
+
+    public BlockType setBlockTypeAt(int x, int y, BlockType t){
+        this.blocks[y][x].type = t;
     }
 
 
