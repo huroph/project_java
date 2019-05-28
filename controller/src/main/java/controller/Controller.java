@@ -78,6 +78,7 @@ public final class Controller implements IController {
 				System.out.println(p.getPosY());
 				/*if( model.getMap().getBlocks(model.IndexPos(model.getPlayer().getPosX()), model.IndexPos(model.getPlayer().getPosY() + model.RealPos(1))).getType() == BlockType.WALL  ){
 						p.setPosY(p.getPosY()+16);
+						condition pour que le player ne monte pas à travers un wall
 				}*/
 				if(this.model.getMap().getBlockTypeAt(model.IndexPos(model.getPlayer().getPosX()), model.IndexPos(model.getPlayer().getPosY())) == BlockType.WALL){
 					p.setPosY(p.getPosY()+16);
