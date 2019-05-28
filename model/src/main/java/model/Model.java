@@ -167,6 +167,7 @@ public final class Model extends Observable implements IModel {
 		return timer;
 	}
 // méthode music
+	// je passe afk
 	public static void music()
 	{
 
