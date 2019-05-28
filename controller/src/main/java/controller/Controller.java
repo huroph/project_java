@@ -71,7 +71,7 @@ public final class Controller implements IController {
 				//changement de block
 				//model.getMap().getBlocks(5,5).setType(BlockType.WALL);
 				//System.out.println(model.getMap().getBlocks(model.IndexPos(model.getPlayer().getPosX() - model.RealPos(1)),model.IndexPos(model.getPlayer().getPosY() - model.RealPos(1))));
-
+				if()
 				//verifier le block sur lequel il doit de deplacer
 				System.out.println(model.IndexPos((int) model.getPlayer().getPosX()) + " : " + model.IndexPos(model.getPlayer().getPosY() - model.RealPos(1)));
 
