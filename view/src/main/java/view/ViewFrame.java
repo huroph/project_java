@@ -11,6 +11,7 @@ import javax.swing.JOptionPane;
 import contract.IController;
 import contract.IModel;
 
+
 /**
  * The Class ViewFrame.
  *
@@ -126,13 +127,34 @@ class ViewFrame extends JFrame implements KeyListener {
 	 *          the model
 	 */
 	private void buildViewFrame(final IModel model) {
+
+		this.addWindowListener(new WindowAdapter() {
+			@Override
+			public void windowOpened(WindowEvent e) {
+				// on doit utiliser un thread pour éviter de bloquer l'IHM
+				new Thread() {
+
+					public void run() {
+						URL url = DemoFrameMusic.class.getResource("music.mp3");
+						try (InputStream audioIn = url.openStream()) {
+							Player clip = new Player(audioIn);
+							clip.play();
+						} catch (IOException | JavaLayerException e1) {
+							e1.printStackTrace();
+						}
+					};
+
+				}.start();
+			}
+		});
+
 		this.setModel(model);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setResizable(false);
 		this.addKeyListener(this);
 		this.setContentPane(new ViewPanel(this));
 		//this.setSize(800 + this.getInsets().left + this.getInsets().right, 600 + this.getInsets().top + this.getInsets().bottom);
-		this.setSize(1920,1080);
+		this.setSize(500,500);
 		this.setLocationRelativeTo(null);
 	}
 
