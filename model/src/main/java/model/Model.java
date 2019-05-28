@@ -17,7 +17,7 @@ import sun.audio.*;
 
 public final class Model extends Observable implements IModel {
 	private final int OFFSET = 16;
-	
+
 	private Map map;
 	private int mapID = 3;
 	private Player player;
@@ -33,11 +33,6 @@ public final class Model extends Observable implements IModel {
 		this.loadMap(mapID);
 		this.player = new Player(startX,startY);
 	}
-
-
-
-
-
 
 	public Map getMap() {
 		return this.map;
@@ -144,9 +139,9 @@ public final class Model extends Observable implements IModel {
 			System.out.println(this.getPlayer().getPosX());
 		}
 	}
-	public void nbrDiamonds(int){
+	//public void nbrDiamonds(int){
 
-	}
+
 
 	//creuser-récuppérer
 	public void dig(){

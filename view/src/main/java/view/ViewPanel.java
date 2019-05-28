@@ -67,6 +67,9 @@ class ViewPanel extends JPanel implements Observer {
 					case DIAMOND:
 						graphics.drawImage(viewFrame.getModel().getMap().getSprites(4),blocks[y][x].getPosX(),blocks[y][x].getPosY(), this);
 						break;
+					case ENDLOCK:
+						graphics.drawImage(viewFrame.getModel().getMap().getSprites(5),blocks[y][x].getPosX(),blocks[y][x].getPosY(), this);
+						break;
 				}
 			}
 		}
