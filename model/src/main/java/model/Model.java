@@ -144,6 +144,7 @@ public final class Model extends Observable implements IModel {
 			System.out.println(this.getPlayer().getPosX());
 		}
 	}
+	// fonction qui permet de savoir si la sortie peut être open et finir la map
 	public void nbrDiamonds(int)
 	{
 
