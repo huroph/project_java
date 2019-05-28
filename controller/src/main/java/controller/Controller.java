@@ -120,7 +120,8 @@ public final class Controller implements IController {
 			case NOTHING:
 				break;
 		}
-
 	}
+
+	public void dig();
 
 }
