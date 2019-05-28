@@ -1,9 +1,10 @@
-package view;
+/*package view;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+
 
 //J'importe la classe en question
 import com.sun.media.sound.JavaSoundAudioClip;
@@ -15,7 +16,7 @@ public class Music extends JavaSoundAudioClip {
         super(son);
     }
 
-    public static void main(String[] args){
+    public static void main(){
         String str = "..\\..\\..\\..\\..\\..\\project_java\\src\\YouSpinMeRound.mp3";
         FileInputStream fic;
         try {
@@ -34,3 +35,4 @@ public class Music extends JavaSoundAudioClip {
     }
 
 }
+*/

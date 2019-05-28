@@ -20,4 +20,5 @@ public enum BlockType {
     public boolean isFall() {
         return fall;
     }
+
 }

@@ -5,6 +5,7 @@ import contract.IController;
 import contract.IModel;
 import contract.IView;
 import entity.BlockType;
+import entity.Player;
 
 /**
  * The Class Controller.
@@ -64,33 +65,33 @@ public final class Controller implements IController {
 		this.model = model;
 	}
 	public void orderPerform(final ControllerOrder controllerOrder) {
+		Player p = model.getPlayer();
 		switch (controllerOrder) {
 			case UP:
-
-				//if ()
 				//changement de block
-				//model.getMap().getBlocks(5,5).setType(BlockType.WALL);
-				//System.out.println(model.getMap().getBlocks(model.IndexPos(model.getPlayer().getPosX() - model.RealPos(1)),model.IndexPos(model.getPlayer().getPosY() - model.RealPos(1))));
-				if()
-				//verifier le block sur lequel il doit de deplacer
-				System.out.println(model.IndexPos((int) model.getPlayer().getPosX()) + " : " + model.IndexPos(model.getPlayer().getPosY() - model.RealPos(1)));
 
-				//System.out.println(model.getMap().getBlocks(model.IndexPos((int) model.getPlayer().getPosX()), model.IndexPos(model.getPlayer().getPosY() - model.RealPos(1))).getType());
-				System.out.println(model.getPlayer().getPosY() - model.RealPos(1));
-				model.getPlayer().setPosY(model.getPlayer().getPosY() - model.RealPos(1));
-				//graphics.drawImage(player.getPlayerSprites(0),viewFrame.getModel().getPlayer().getPosX(),viewFrame.getModel().getPlayer().getPosY(), this);
-				System.out.println(model.getPlayer().getPosY());
+
+				//verifier le block sur lequel il doit de deplacer
+				System.out.println(model.IndexPos((int) p.getPosX()) + " : " + model.IndexPos(p.getPosY() - model.RealPos(1)));
+				System.out.println(p.getPosY() - model.RealPos(1));
+				p.setPosY(p.getPosY() - model.RealPos(1));
+				System.out.println(p.getPosY());
+				if( model.getMap().getBlocks(model.IndexPos(p.getPosX()),model.IndexPos(model.IndexPos(p.getPosY()))).getType().equals(BlockType.WALL)  ){
+						p.setPosY(p.getPosY()+16);
+				}
 				break;
 			case DOWN:
-
+				System.out.println(model.IndexPos((int) model.getPlayer().getPosX()) + " : " + model.IndexPos(model.getPlayer().getPosY() - model.RealPos(1)));
 				System.out.println(model.getMap().getBlocks(model.IndexPos((int) model.getPlayer().getPosX()), model.IndexPos(model.getPlayer().getPosY() + model.RealPos(1))).getType());
 				model.getPlayer().setPosY(model.getPlayer().getPosY() + model.RealPos(1));
 				break;
 			case LEFT:
+				System.out.println(model.IndexPos((int) model.getPlayer().getPosX()) + " : " + model.IndexPos(model.getPlayer().getPosY() - model.RealPos(1)));
 				System.out.println(model.getMap().getBlocks(model.IndexPos((int) model.getPlayer().getPosX() - model.RealPos(1)), model.IndexPos(model.getPlayer().getPosY())).getType());
 				model.getPlayer().setPosX(model.getPlayer().getPosX() - model.RealPos(1));
 				break;
 			case RIGHT:
+				System.out.println(model.IndexPos((int) model.getPlayer().getPosX()) + " : " + model.IndexPos(model.getPlayer().getPosY() - model.RealPos(1)));
 				System.out.println(model.getMap().getBlocks(model.IndexPos((int) model.getPlayer().getPosX() + model.RealPos(1)), model.IndexPos(model.getPlayer().getPosY())).getType());
 				model.getPlayer().setPosX(model.getPlayer().getPosX() + model.RealPos(1));
 				break;
