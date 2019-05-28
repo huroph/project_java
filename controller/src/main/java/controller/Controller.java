@@ -72,16 +72,14 @@ public final class Controller implements IController {
 
 				//model.getMap().getBlocks(model.IndexPos(p.getPosX()),model.IndexPos(model.IndexPos(p.getPosY()))).getType()
 				//verifier le block sur lequel il doit de deplacer
+
+                if(this.model.getMap().getBlockTypeAt(model.IndexPos(model.getPlayer().getPosX()), model.IndexPos(model.getPlayer().getPosY() -16)) == BlockType.WALL){
+
 				System.out.println(model.IndexPos((int) p.getPosX()) + " : " + model.IndexPos(p.getPosY() - model.RealPos(1)));
 				System.out.println(p.getPosY() - model.RealPos(1));
-				p.setPosY(p.getPosY() - model.RealPos(1));
+				p.setPosY(p.getPosY() - 16);
 				System.out.println(p.getPosY());
-				/*if( model.getMap().getBlocks(model.IndexPos(model.getPlayer().getPosX()), model.IndexPos(model.getPlayer().getPosY() + model.RealPos(1))).getType() == BlockType.WALL  ){
-						p.setPosY(p.getPosY()+16);
-						condition pour que le player ne monte pas à travers un wall
-				}*/
-				if(this.model.getMap().getBlockTypeAt(model.IndexPos(model.getPlayer().getPosX()), model.IndexPos(model.getPlayer().getPosY())) == BlockType.WALL){
-					p.setPosY(p.getPosY()+16);
+
 				}
 				break;
 			case DOWN:
