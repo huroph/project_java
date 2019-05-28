@@ -170,8 +170,34 @@ public final class Model extends Observable implements IModel {
 
 	public static void music()
 	{
-		File son = new File("tonfichier");
-		AudioClip clip = Applet.newAudioClip(f.toUrl());
-		clip.play();
+		public static void music()
+		{
+			AudioPlayer MGP = AudioPlayer.player;
+			AudioStream BGM;
+			AudioData MD;
+
+			ContinuousAudioDataStream loop = null;
+
+			try
+			{
+				InputStream test = new FileInputStream("C:\\Music1.wmv");
+				BGM = new AudioStream(test);
+				AudioPlayer.player.start(BGM);
+				//MD = BGM.getData();
+				//loop = new ContinuousAudioDataStream(MD);
+
+			}
+			catch(FileNotFoundException e){
+				System.out.print(e.toString());
+			}
+			catch(IOException error)
+			{
+				System.out.print(error.toString());
+			}
+			MGP.start(loop);
+		}
+
+
+	}
 	}
 }
