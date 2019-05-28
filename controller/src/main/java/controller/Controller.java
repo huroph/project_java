@@ -65,21 +65,21 @@ public final class Controller implements IController {
 		this.model = model;
 	}
 	public void orderPerform(final ControllerOrder controllerOrder) {
+
+		/*
 		Player p = model.getPlayer();
 		switch (controllerOrder) {
 			case UP:
 				//changement de block
 
 				//model.getMap().getBlocks(model.IndexPos(p.getPosX()),model.IndexPos(model.IndexPos(p.getPosY()))).getType()
-				//verifier le block sur lequel il doit de deplacer
 
-                if(this.model.getMap().getBlockTypeAt(model.IndexPos(model.getPlayer().getPosX()), model.IndexPos(model.getPlayer().getPosY() -16)) == BlockType.WALL){
-
+				//verifier le block sur lequel il doit se deplacer
+                if(this.model.getMap().getBlockTypeAt(model.IndexPos(model.getPlayer().getPosX()), model.IndexPos(model.getPlayer().getPosY() -16)) != BlockType.WALL){
 				System.out.println(model.IndexPos((int) p.getPosX()) + " : " + model.IndexPos(p.getPosY() - model.RealPos(1)));
 				System.out.println(p.getPosY() - model.RealPos(1));
 				p.setPosY(p.getPosY() - 16);
 				System.out.println(p.getPosY());
-
 				}
 				break;
 			case DOWN:
@@ -99,6 +99,44 @@ public final class Controller implements IController {
 				break;
 			case NOTHING:
 				break;
+		}
+		*/
+
+
+		switch (controllerOrder) {
+			case UP:
+				verticalMove(-16);
+				break;
+			case DOWN:
+				verticalMove(16);
+				break;
+			case LEFT:
+				horizontalMove(-16);
+				break;
+			case RIGHT:
+				horizontalMove(16);
+				break;
+			case NOTHING:
+				break;
+		}
+
+	}
+
+	private void verticalMove(int sens) {
+		if (this.model.getMap().getBlockTypeAt(model.IndexPos(model.getPlayer().getPosX()), model.IndexPos(model.getPlayer().getPosY() + sens)) != BlockType.WALL) {
+			System.out.println(model.IndexPos((int) model.getPlayer().getPosX()) + " : " + model.IndexPos(model.getPlayer().getPosY() - model.RealPos(1)));
+			System.out.println(model.getPlayer().getPosY() + sens);
+			model.getPlayer().setPosY(model.getPlayer().getPosY() + sens);
+			System.out.println(model.getPlayer().getPosY());
+		}
+	}
+
+	private void horizontalMove(int sens) {
+		if (this.model.getMap().getBlockTypeAt(model.IndexPos(model.getPlayer().getPosX()), model.IndexPos(model.getPlayer().getPosY() + sens)) != BlockType.WALL) {
+			System.out.println(model.IndexPos((int) model.getPlayer().getPosX()) + " : " + model.IndexPos(model.getPlayer().getPosY() - model.RealPos(1)));
+			System.out.println(model.getPlayer().getPosX() + sens);
+			model.getPlayer().setPosX(model.getPlayer().getPosX() + sens);
+			System.out.println(model.getPlayer().getPosX());
 		}
 	}
 
