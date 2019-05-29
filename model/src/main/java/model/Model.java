@@ -171,7 +171,7 @@ public final class Model extends Observable implements IModel {
 	}
 
 	//falling
-	public void scan(){
+	public void scanFall(){
 
 		for(int y = 0; y<map.getHeight(); y+=16){
 			for(int x = 0;x<map.getLenght();x+=16){
