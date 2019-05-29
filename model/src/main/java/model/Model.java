@@ -155,6 +155,11 @@ public final class Model extends Observable implements IModel {
 
 	}
 
+	//falling
+	public void fall(){
+
+	}
+
 
 }
 

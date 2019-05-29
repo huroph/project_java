@@ -66,4 +66,5 @@ public interface IModel {
 	public void verticalMove(int sens);
 	public void horizontalMove(int sens);
 	public void dig();
+	public void fall();
 }
