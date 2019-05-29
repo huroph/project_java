@@ -137,14 +137,12 @@ class ViewFrame extends JFrame implements KeyListener {
 		this.addKeyListener(this);
 		this.setContentPane(new ViewPanel(this));
 		//this.setSize(800 + this.getInsets().left + this.getInsets().right, 600 + this.getInsets().top + this.getInsets().bottom);
-		this.setSize(500,500);
+		this.setSize(500, 500);
 		this.setLocationRelativeTo(null);
 
 		playMusic("src/mario.wav");
-
-
 	}
-	//musique du jeu
+
 	private void playMusic(String filepath){
 		try{
 			File music = new File(filepath);
@@ -157,6 +155,7 @@ class ViewFrame extends JFrame implements KeyListener {
 			System.out.println(e.getMessage());
 		}
 	}
+
 
 	/**
 	 * Prints the message.

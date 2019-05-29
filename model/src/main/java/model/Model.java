@@ -17,10 +17,8 @@ public final class Model extends Observable implements IModel {
 	private final int OFFSET = 16;
 	
 	private Map map;
-	private Block block;
 	private int mapID = 3;
 	private Player player;
-	private Model model;
 	private int startX = RealPos(2);
 	private int startY = RealPos(1);
 	private int timer = 500;
@@ -30,7 +28,6 @@ public final class Model extends Observable implements IModel {
 	 * Instantiates a new model.
 	 */
 	public Model() {
-
 		this.loadMap(mapID);
 		this.player = new Player(startX,startY);
 	}
@@ -66,6 +63,7 @@ public final class Model extends Observable implements IModel {
 		try {
 			final DAOMap daoMap = new DAOMap(DBConnection.getInstance().getConnection());
 			this.setMap(daoMap.find(id));
+			System.out.println(map.getLenght()+","+map.getHeight());
 		} catch (final SQLException e) {
 			e.printStackTrace();
 		}
@@ -144,7 +142,7 @@ public final class Model extends Observable implements IModel {
 
 	//Deplacements
 	public void verticalMove( int sens){
-		if (this.getMap().getBlockTypeAt(this.IndexPos(this.getPlayer().getPosX()), this.IndexPos(this.getPlayer().getPosY() + sens)).isOpaque() != true) {
+		if (!this.getMap().getBlockTypeAt(this.IndexPos(this.getPlayer().getPosX()), this.IndexPos(this.getPlayer().getPosY() + sens)).isOpaque()) {
 			System.out.println(this.IndexPos((int) this.getPlayer().getPosX()) + " : " + this.IndexPos(this.getPlayer().getPosY() + sens));
 			System.out.println(this.getPlayer().getPosY() + sens);
 			this.getPlayer().setPosY(this.getPlayer().getPosY() + sens);
@@ -153,7 +151,7 @@ public final class Model extends Observable implements IModel {
 	}
 
 	public void horizontalMove(int sens){
-		if (this.getMap().getBlockTypeAt(this.IndexPos(this.getPlayer().getPosX() + sens), this.IndexPos(this.getPlayer().getPosY())).isOpaque() != true) {
+		if (!this.getMap().getBlockTypeAt(this.IndexPos(this.getPlayer().getPosX() + sens), this.IndexPos(this.getPlayer().getPosY())).isOpaque()) {
 			System.out.println(this.IndexPos((int) this.getPlayer().getPosX() + sens) + " : " + this.IndexPos(this.getPlayer().getPosY()));
 			System.out.println(this.getPlayer().getPosX() + sens);
 			this.getPlayer().setPosX(this.getPlayer().getPosX() + sens);
@@ -175,21 +173,14 @@ public final class Model extends Observable implements IModel {
 
 	//falling
 	public void scanFall(){
-		Thread thread = new Thread (() ->{
-			while (true){
-				for(int y = 0; y<20*16; y+=16){
-					for(int x = 0;x<28*16;x+=16){
-						if(model.getMap().getBlockTypeAt(x, y).isFall() == true && model.getMap().getBlockTypeAt(x, y+16) == BlockType.EMPTY){
-							model.getMap().setBlockTypeAt(x, y, BlockType.EMPTY);
-							model.getMap().setBlockTypeAt(x, y, BlockType.ROCK);
+				for(int y = 0; y<getMap().getHeight(); y++){
+					for(int x = 0;x<getMap().getLenght();x++){
+						if( (getMap().getBlockTypeAt(x,y).isFall()) && getMap().getBlockTypeAt(x, y+1).equals(BlockType.EMPTY) ){
+							getMap().setBlockTypeAt(x, y , BlockType.EMPTY);
+							getMap().setBlockTypeAt(x, y+1 , BlockType.ROCK);
 						}
 					}
 				}
-
-			}
-		});
-		thread.start();
-
 	}
 
 
