@@ -47,7 +47,7 @@ public final class Controller implements IController {
 	 * @see contract.IController#control()
 	 */
 	public void control() {
-		this.view.printMessage("Appuyer sur les flèches HAUT, BAS, GAUCHE, DROITE, pour déplacer le personnage.");
+		this.view.printMessage("Appuyer sur les flèches HAUT, BAS, GAUCHE, DROITE, pour déplacer le personnage");
 	}
 
 	/**

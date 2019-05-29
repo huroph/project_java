@@ -116,11 +116,7 @@ public final class Model extends Observable implements IModel {
 		}).start();
 	}
 
-	public void score(){
-		if(player.getPosX() && player.getPosY() == BlockType.DIAMOND){
-			int i = score++;
-		}
-	}
+
 
 
 	public void setTimer(int timer) {

@@ -15,7 +15,6 @@ public class Player extends Entity {
     public Player(final int x, final int y) {
         setPosX(x);
         setPosY(y);
-        /** ? Entity or Model ? **/
         try {
             spriteSheet = ImageIO.read(new File("src/player.png"));
             sprites = new Image[5];
@@ -39,7 +38,6 @@ public class Player extends Entity {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        /** ?------------------? **/
     }
 
     /**
