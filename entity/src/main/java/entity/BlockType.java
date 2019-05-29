@@ -17,7 +17,6 @@ public enum BlockType {
     public boolean isOpaque() {
         return opaque;
     }
-
     public boolean isFall() {
         return fall;
     }
