@@ -4,6 +4,7 @@ import entity.Block;
 import entity.Map;
 import entity.Player;
 
+
 import java.awt.*;
 import java.util.Observable;
 import java.util.Observer;
@@ -17,6 +18,7 @@ class ViewPanel extends JPanel implements Observer {
 
 	private ViewFrame viewFrame;
 	private int timer = 500;
+	private int score = 0;
 
 	private static final long	serialVersionUID	= -998294702363713521L;
 
@@ -79,6 +81,8 @@ class ViewPanel extends JPanel implements Observer {
 		Font font = new Font ("Courier",Font.BOLD,20);
 		graphics.setFont(font);
 		graphics.drawString("timer:"+viewFrame.getModel().getTimer(),10,340);
+		graphics.drawString("Score:",10,360);
+
 
 		if(viewFrame.getModel().getTimer()<=0) {
 			viewFrame.printMessage("Game Over");

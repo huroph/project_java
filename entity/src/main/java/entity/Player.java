@@ -30,10 +30,10 @@ public class Player extends Entity {
             sprites[2] = spriteSheet.getSubimage(0*16, 3 * 16, 16, 16);
             //Monter
 
-            sprites[3] = spriteSheet.getSubimage(0*16, 1 * 16, 16, 16);
+            sprites[3] = spriteSheet.getSubimage(2*16,  5* 16, 16, 16);
 
             // Décendre
-            sprites[4] = spriteSheet.getSubimage(0*16, 1 * 16, 16, 16);
+            sprites[4] = spriteSheet.getSubimage(0*16, 4 * 16, 16, 16);
 
 
         } catch (IOException e) {

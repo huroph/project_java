@@ -23,6 +23,7 @@ public final class Model extends Observable implements IModel {
 	private int startX = RealPos(2);
 	private int startY = RealPos(1);
 	private int timer = 500;
+	private int score = 0;
 	private int sleep;
 	/**
 	 * Instantiates a new model.
@@ -114,6 +115,12 @@ public final class Model extends Observable implements IModel {
 		}).start();
 	}
 
+	public void score(){
+		if(player.getPosX() && player.getPosY() == BlockType.DIAMOND){
+			int i = score++;
+		}
+	}
+
 
 	public void setTimer(int timer) {
 		this.timer = timer;
@@ -122,7 +129,16 @@ public final class Model extends Observable implements IModel {
 	public int getTimer() {
 		return timer;
 	}
-// méthode music
+
+	public int getScore() {
+		return score;
+	}
+
+	public void setScore(int score) {
+		this.score = score;
+	}
+
+	// méthode music
 
 
 	//Deplacements
