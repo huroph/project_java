@@ -137,7 +137,7 @@ public final class Model extends Observable implements IModel {
 	}
 
 	public void horizontalMove(int sens){
-		if (this.getMap().getBlockTypeAt(this.IndexPos(this.getPlayer().getPosX() + sens), this.IndexPos(this.getPlayer().getPosY())) != BlockType.WALL) {
+		if (this.getMap().getBlockTypeAt(this.IndexPos(this.getPlayer().getPosX() + sens), this.IndexPos(this.getPlayer().getPosY())).isOpaque() != true) {
 			System.out.println(this.IndexPos((int) this.getPlayer().getPosX() + sens) + " : " + this.IndexPos(this.getPlayer().getPosY()));
 			System.out.println(this.getPlayer().getPosX() + sens);
 			this.getPlayer().setPosX(this.getPlayer().getPosX() + sens);
