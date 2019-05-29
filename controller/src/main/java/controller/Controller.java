@@ -87,7 +87,7 @@ public final class Controller implements IController {
 				break;
 		}
         this.model.dig();
-
+        this.model.scanFall();
 	}
 
 }

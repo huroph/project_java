@@ -4,10 +4,8 @@ import java.util.ArrayList;
 import java.util.Observable;
 
 import contract.IModel;
-import entity.BlockType;
 
-import entity.Map;
-import entity.Player;
+import entity.*;
 
 import javax.swing.*;
 import javax.swing.text.View;
@@ -116,7 +114,11 @@ public final class Model extends Observable implements IModel {
 		}).start();
 	}
 
-
+	/*public void score(){
+		if(player.getPosX() && player.getPosY() == BlockType.DIAMOND){
+			int i = score++;
+		}
+	}*/
 
 
 	public void setTimer(int timer) {
@@ -168,8 +170,16 @@ public final class Model extends Observable implements IModel {
 	}
 
 	//falling
-	public void fall(){
+	public void scanFall(){
 
+		for(int y = 0; y<map.getHeight(); y+=16){
+			for(int x = 0;x<map.getLenght();x+=16){
+				if(this.getMap().getBlockTypeAt(x, y).isFall() == true && this.getMap().getBlockTypeAt(x, y+16) == BlockType.EMPTY){
+					this.getMap().setBlockTypeAt(x, y, BlockType.EMPTY);
+					this.getMap().setBlockTypeAt(x, y+16, BlockType.ROCK);
+				}
+			}
+		}
 	}
 
 
