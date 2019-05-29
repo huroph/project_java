@@ -17,8 +17,10 @@ public final class Model extends Observable implements IModel {
 	private final int OFFSET = 16;
 	
 	private Map map;
+	private Block block;
 	private int mapID = 3;
 	private Player player;
+	private Model model;
 	private int startX = RealPos(2);
 	private int startY = RealPos(1);
 	private int timer = 500;
@@ -169,17 +171,25 @@ public final class Model extends Observable implements IModel {
 
 	}
 
+
+
 	//falling
 	public void scanFall(){
-
-		for(int y = 0; y<map.getHeight(); y+=16){
-			for(int x = 0;x<map.getLenght();x+=16){
-				if(this.getMap().getBlockTypeAt(x, y).isFall() == true && this.getMap().getBlockTypeAt(x, y+16) == BlockType.EMPTY){
-					this.getMap().setBlockTypeAt(x, y, BlockType.EMPTY);
-					this.getMap().setBlockTypeAt(x, y+16, BlockType.ROCK);
+		Thread thread = new Thread (() ->{
+			while (true){
+				for(int y = 0; y<20*16; y+=16){
+					for(int x = 0;x<28*16;x+=16){
+						if(model.getMap().getBlockTypeAt(x, y).isFall() == true && model.getMap().getBlockTypeAt(x, y+16) == BlockType.EMPTY){
+							model.getMap().setBlockTypeAt(x, y, BlockType.EMPTY);
+							model.getMap().setBlockTypeAt(x, y, BlockType.ROCK);
+						}
+					}
 				}
+
 			}
-		}
+		});
+		thread.start();
+
 	}
 
 

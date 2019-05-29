@@ -44,7 +44,7 @@ public class Map extends Entity {
             // Rock
             sprites[3] = spriteSheet.getSubimage(3*16, 0 * 16, 16, 16);
             // DIAMOND
-            sprites[4] = spriteSheet.getSubimage(5*16, 0 * 16, 16, 16);
+            sprites[4] = spriteSheet.getSubimage(5*16,  0* 16, 16, 16);
             //sortieverrouiller
             sprites[5] = spriteSheet.getSubimage(8*16, 0 * 16, 16, 16);
         } catch (IOException e) {
