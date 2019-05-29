@@ -17,6 +17,7 @@ public final class Model extends Observable implements IModel {
 	private final int OFFSET = 16;
 	
 	private Map map;
+	private Block block;
 	private int mapID = 3;
 	private Player player;
 	private int startX = RealPos(2);
@@ -170,7 +171,7 @@ public final class Model extends Observable implements IModel {
 	}
 
 	//falling
-	public void scanFall(){
+	public void scan(){
 
 		for(int y = 0; y<map.getHeight(); y+=16){
 			for(int x = 0;x<map.getLenght();x+=16){
