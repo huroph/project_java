@@ -5,7 +5,7 @@ public enum BlockType {
     DIRT(false,false),
     EMPTY(false,false),
     ROCK(true,true),
-    DIAMOND(true,true),
+    DIAMOND(false,true),
     ENDLOCK(true,false);
  private final boolean opaque, fall;
 
@@ -17,7 +17,6 @@ public enum BlockType {
     public boolean isOpaque() {
         return opaque;
     }
-
     public boolean isFall() {
         return fall;
     }
