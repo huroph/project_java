@@ -151,7 +151,7 @@ public final class Model extends Observable implements IModel {
 			//nbrDIAMOND --;
 		}*/
 
-		this.getMap().getBlockTypeAt(this.IndexPos(this.getPlayer().getPosX()), this.IndexPos(this.getPlayer().getPosY())) = BlockType.EMPTY;
+		this.getMap().setBlockTypeAt(this.IndexPos(this.getPlayer().getPosX()), this.IndexPos(this.getPlayer().getPosY()), BlockType.EMPTY);
 
 	}
 
