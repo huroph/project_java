@@ -35,6 +35,7 @@ public class Map extends Entity {
             spriteSheet = ImageIO.read(new File("src/level.png"));
             sprites = new Image[6];
             // Wall
+
             sprites[0] = spriteSheet.getSubimage(0*16, 0 * 16, 16, 16);
             // Dirt
             sprites[1] = spriteSheet.getSubimage(1*16, 0 * 16, 32, 16);
