@@ -144,16 +144,15 @@ public final class Model extends Observable implements IModel {
 			System.out.println(this.getPlayer().getPosX());
 		}
 	}
-	public void nbrDiamonds(int){
-
-	}
 
 	//creuser-récuppérer
 	public void dig(){
 		/*if (this.getMap().getBlockTypeAt(this.IndexPos(this.getPlayer().getPosX()), this.IndexPos(this.getPlayer().getPosY())) == BlockType.DIAMOND) {
 			//nbrDIAMOND --;
 		}*/
+
 		this.getMap().getBlockTypeAt(this.IndexPos(this.getPlayer().getPosX()), this.IndexPos(this.getPlayer().getPosY())) = BlockType.EMPTY;
+
 	}
 
 
