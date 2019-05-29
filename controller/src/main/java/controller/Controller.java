@@ -72,7 +72,6 @@ public final class Controller implements IController {
 		switch (controllerOrder) {
 			case UP:
 				this.model.verticalMove(-16);
-
 				break;
 			case DOWN:
 				this.model.verticalMove(16);
@@ -91,9 +90,6 @@ public final class Controller implements IController {
 	}
 
 }
-
-
-
 		/*
 		Player p = model.getPlayer();
 		switch (controllerOrder) {

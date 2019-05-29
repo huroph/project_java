@@ -17,6 +17,7 @@ public final class Model extends Observable implements IModel {
 	private final int OFFSET = 16;
 	
 	private Map map;
+	private Block block;
 	private int mapID = 3;
 	private Player player;
 	private Model model;

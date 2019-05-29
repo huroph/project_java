@@ -1,5 +1,7 @@
 package entity;
 
+
+
 public enum BlockType {
     WALL(true,false),
     DIRT(false,false),
@@ -14,9 +16,7 @@ public enum BlockType {
         this.fall = fall;
     }
 
-    public boolean isOpaque() {
-        return opaque;
-    }
+    public boolean isOpaque() { return opaque; }
     public boolean isFall() {
         return fall;
     }
