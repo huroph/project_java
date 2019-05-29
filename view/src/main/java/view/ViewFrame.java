@@ -5,9 +5,10 @@ import java.awt.HeadlessException;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.io.File;
-import java.io.IOException;
 
-import javax.sound.sampled.*;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -138,6 +139,8 @@ class ViewFrame extends JFrame implements KeyListener {
 		//this.setSize(800 + this.getInsets().left + this.getInsets().right, 600 + this.getInsets().top + this.getInsets().bottom);
 		this.setSize(500, 500);
 		this.setLocationRelativeTo(null);
+
+		playMusic("src/mario.wav");
 	}
 
 	private void playMusic(String filepath){
