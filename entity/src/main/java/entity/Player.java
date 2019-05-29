@@ -18,7 +18,7 @@ public class Player extends Entity {
         /** ? Entity or Model ? **/
         try {
             spriteSheet = ImageIO.read(new File("src/player.png"));
-            sprites = new Image[4];
+            sprites = new Image[5];
             // Perso à l'arrêt
             sprites[0] = spriteSheet.getSubimage(0*16, 0 * 16, 16, 16);
            // Déplacement vers la gauche

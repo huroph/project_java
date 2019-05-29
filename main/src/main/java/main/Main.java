@@ -4,6 +4,7 @@
  */
 package main;
 
+
 import contract.ControllerOrder;
 import controller.Controller;
 import model.Model;
@@ -17,6 +18,7 @@ import java.io.File;
  * @author Jean-Aymeric Diet
  */
 public abstract class Main {
+
 
     /**
      * The main method.
