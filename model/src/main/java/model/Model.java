@@ -17,7 +17,6 @@ public final class Model extends Observable implements IModel {
 	private final int OFFSET = 16;
 	
 	private Map map;
-	private Block block;
 	private int mapID = 3;
 	private Player player;
 	private int startX = RealPos(2);
@@ -115,11 +114,11 @@ public final class Model extends Observable implements IModel {
 		}).start();
 	}
 
-	public void score(){
+	/*public void score(){
 		if(player.getPosX() && player.getPosY() == BlockType.DIAMOND){
 			int i = score++;
 		}
-	}
+	}*/
 
 
 	public void setTimer(int timer) {
@@ -171,45 +170,16 @@ public final class Model extends Observable implements IModel {
 	}
 
 	//falling
-	public void scan(){
+	public void scanFall(){
 
 		for(int y = 0; y<map.getHeight(); y+=16){
 			for(int x = 0;x<map.getLenght();x+=16){
-				block.getPosX()
+				if(this.getMap().getBlockTypeAt(x, y).isFall() == true && this.getMap().getBlockTypeAt(x, y+16) == BlockType.EMPTY){
+					this.getMap().setBlockTypeAt(x, y, BlockType.EMPTY);
+					this.getMap().setBlockTypeAt(x, y+16, BlockType.ROCK);
 				}
 			}
 		}
-
-
-
-		/*Map map = viewFrame.getModel().getMap();
-		Block[][] blocks = map.getBlocks();
-		for(int y = 0; y<map.getHeight(); y++){
-			for(int x = 0;x<map.getLenght();x++){
-				//Affichage des sprites
-				switch (blocks[y][x].type){
-					case WALL:
-						graphics.drawImage(viewFrame.getModel().getMap().getSprites(0),blocks[y][x].getPosX(),blocks[y][x].getPosY(), this);
-						break;
-					case DIRT:
-						graphics.drawImage(viewFrame.getModel().getMap().getSprites(1),blocks[y][x].getPosX(),blocks[y][x].getPosY(), this);
-						break;
-					case EMPTY:
-						graphics.drawImage(viewFrame.getModel().getMap().getSprites(2),blocks[y][x].getPosX(),blocks[y][x].getPosY(), this);
-						break;
-					case ROCK:
-						graphics.drawImage(viewFrame.getModel().getMap().getSprites(3),blocks[y][x].getPosX(),blocks[y][x].getPosY(), this);
-						break;
-					case DIAMOND:
-						graphics.drawImage(viewFrame.getModel().getMap().getSprites(4),blocks[y][x].getPosX(),blocks[y][x].getPosY(), this);
-						break;
-					case ENDLOCK:
-						graphics.drawImage(viewFrame.getModel().getMap().getSprites(5),blocks[y][x].getPosX(),blocks[y][x].getPosY(), this);
-						break;
-				}
-			}
-		}*/
-
 	}
 
 
