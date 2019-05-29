@@ -21,12 +21,21 @@ public class Player extends Entity {
             sprites = new Image[4];
             // Perso à l'arrêt
             sprites[0] = spriteSheet.getSubimage(0*16, 0 * 16, 16, 16);
-            // Dirt
-            sprites[1] = spriteSheet.getSubimage(1*16, 0 * 16, 32, 16);
-            // Empty
-            sprites[2] = spriteSheet.getSubimage(2*16, 0 * 16, 16, 16);
-            // Rock
-            sprites[3] = spriteSheet.getSubimage(3*16, 0 * 16, 16, 16);
+           // Déplacement vers la gauche
+
+            sprites[1] = spriteSheet.getSubimage(0*16, 1 * 16, 16, 16);
+
+            //Déplacement vers la droite
+
+            sprites[2] = spriteSheet.getSubimage(0*16, 3 * 16, 16, 16);
+            //Monter
+
+            sprites[3] = spriteSheet.getSubimage(0*16, 1 * 16, 16, 16);
+
+            // Décendre
+            sprites[4] = spriteSheet.getSubimage(0*16, 1 * 16, 16, 16);
+
+
         } catch (IOException e) {
             e.printStackTrace();
         }
