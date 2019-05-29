@@ -12,6 +12,9 @@ import entity.Player;
  */
 public final class Controller implements IController {
 
+
+
+
 	/**
 	 * The view.
 	 */
