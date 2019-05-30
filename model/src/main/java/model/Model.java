@@ -201,8 +201,8 @@ public final class Model extends Observable implements IModel {
 
 						    if(this.IndexPos(this.getPlayer().getPosX()) != x || this.IndexPos(this.getPlayer().getPosY()) != y+1) {
 
+                                getMap().setBlockTypeAt(x, y+1, getMap().getBlockTypeAt(x,y));
                                 getMap().setBlockTypeAt(x, y, BlockType.EMPTY);
-                                getMap().setBlockTypeAt(x, y + 1, BlockType.ROCK);
 
                             }
 
