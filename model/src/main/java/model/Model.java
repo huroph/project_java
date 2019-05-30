@@ -206,7 +206,7 @@ public final class Model extends Observable implements IModel {
 		}
 		this.getMap().setBlockTypeAt(this.IndexPos(this.getPlayer().getPosX()), this.IndexPos(this.getPlayer().getPosY()), BlockType.EMPTY);
 	}
-	public void endGame(){if ( score == 5 && this.getMap().getBlockTypeAt(this.IndexPos(this.getPlayer().getPosX()), this.IndexPos(this.getPlayer().getPosY())).equals(BlockType.ENDLOCK)){
+	public void endGame(){if ( score >= 5 && this.getMap().getBlockTypeAt(this.IndexPos(this.getPlayer().getPosX()), this.IndexPos(this.getPlayer().getPosY())).equals(BlockType.ENDLOCK)){
 		System.out.println("gg mon gars c toi le meilleur de tous les gros beau goose ");
 		System.out.println(endGame = 1);
 		this.setEndGame(endGame);
