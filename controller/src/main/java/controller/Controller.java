@@ -85,9 +85,12 @@ public final class Controller implements IController {
 			case NOTHING:
 				break;
 		}
+		this.model.endGame();
+		this.model.score();
         this.model.dig();
         this.model.scanFall();
-        this.model.score();
+
+
 	}
 
 }

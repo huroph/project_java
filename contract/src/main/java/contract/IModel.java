@@ -62,13 +62,21 @@ public interface IModel {
 	void timer();
 	void score();
 
+
+	int getenGame();
 	int getTimer();
 	int getscore();
+
+	public void endGame();
 
 	public void verticalMove(int sens);
 	public void horizontalMove(int sens);
 	public void dig();
 	public void scanFall();
+
+
+
+
 	//public void score();
 
 }

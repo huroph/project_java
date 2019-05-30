@@ -17,12 +17,13 @@ public final class Model extends Observable implements IModel {
 	private final int OFFSET = 16;
 	
 	private Map map;
-	private int mapID = 2;
+	private int mapID = 3;
 	private Player player;
 	private int startX = RealPos(2);
 	private int startY = RealPos(1);
 	private int timer = 500;
 	private int score = 0;
+	private int endGame = 0;
 	private int sleep;
 	/**
 	 * Instantiates a new model.
@@ -63,6 +64,7 @@ public final class Model extends Observable implements IModel {
 			e.printStackTrace();
 		}
 		timer();
+		endGame();
 	}
 
 
@@ -114,6 +116,13 @@ public final class Model extends Observable implements IModel {
 
 	}
 
+
+
+	@Override
+	public int getenGame() {
+		return endGame;
+	}
+
 	/*public void score(){
 		if(player.getPosX() && player.getPosY() == BlockType.DIAMOND){
 			int i = score++;
@@ -134,12 +143,18 @@ public final class Model extends Observable implements IModel {
 
 	@Override
 	public int getscore() {
-		return 0;
-	}
-
-	public int getScore() {
 		return score;
 	}
+
+	public int getEndGame() {
+		return endGame;
+	}
+	public void setEndGame(int endGame) {
+		this.endGame = endGame;
+	}
+
+
+
 
 	public void setScore(int score) {
 		this.score = score;
@@ -183,18 +198,21 @@ public final class Model extends Observable implements IModel {
 }*/
 	//creuser-récuppérer
 	public void dig(){
-		if (this.getMap().getBlockTypeAt(this.IndexPos(this.getPlayer().getPosX()), this.IndexPos(this.getPlayer().getPosY())) == BlockType.DIAMOND) {
+		if (this.getMap().getBlockTypeAt(this.IndexPos(this.getPlayer().getPosX()), this.IndexPos(this.getPlayer().getPosY())).equals(BlockType.DIAMOND)) {
 			score++;
 			this.setscore(score);
 			System.out.println(score);
-			if ( score == 5 && ){
-			System.out.println("bb");
 
-
-
-			}
 		}
 		this.getMap().setBlockTypeAt(this.IndexPos(this.getPlayer().getPosX()), this.IndexPos(this.getPlayer().getPosY()), BlockType.EMPTY);
+	}
+	public void endGame(){if ( score == 5 && this.getMap().getBlockTypeAt(this.IndexPos(this.getPlayer().getPosX()), this.IndexPos(this.getPlayer().getPosY())).equals(BlockType.ENDLOCK)){
+		System.out.println("gg mon gars c toi le meilleur de tous les gros beau goose ");
+		System.out.println(endGame = 1);
+		this.setEndGame(endGame);
+
+	}
+
 	}
 	//falling
 	public void scanFall(){
@@ -213,7 +231,6 @@ public final class Model extends Observable implements IModel {
 					}
 				}
 	}
-
 
 
 
