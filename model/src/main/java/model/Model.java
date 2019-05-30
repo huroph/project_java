@@ -187,7 +187,10 @@ public final class Model extends Observable implements IModel {
 			score++;
 			this.setscore(score);
 			System.out.println(score);
-			if ( score == 5 ){
+			if ( score == 5 && ){
+			System.out.println("bb");
+
+
 
 			}
 		}
@@ -210,6 +213,7 @@ public final class Model extends Observable implements IModel {
 					}
 				}
 	}
+
 
 
 

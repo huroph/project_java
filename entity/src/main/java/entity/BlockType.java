@@ -8,7 +8,7 @@ public enum BlockType {
     EMPTY(false,false),
     ROCK(true,true),
     DIAMOND(false,true),
-    ENDLOCK(true,false);
+    ENDLOCK(false,false);
  private final boolean opaque, fall;
 
     BlockType(boolean opaque, boolean fall){
