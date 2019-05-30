@@ -60,11 +60,15 @@ public interface IModel {
 	Observable getObservable();
 
 	void timer();
+	void score();
 
 	int getTimer();
+	int getscore();
 
 	public void verticalMove(int sens);
 	public void horizontalMove(int sens);
 	public void dig();
 	public void scanFall();
+	//public void score();
+
 }

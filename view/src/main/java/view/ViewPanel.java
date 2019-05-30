@@ -81,7 +81,7 @@ class ViewPanel extends JPanel implements Observer {
 		Font font = new Font ("Courier",Font.BOLD,20);
 		graphics.setFont(font);
 		graphics.drawString("timer:"+viewFrame.getModel().getTimer(),10,340);
-		graphics.drawString("Score:",10,360);
+		graphics.drawString("Score:"+viewFrame.getModel().getscore(),10,360) ;
 
 
 		if(viewFrame.getModel().getTimer()<=0) {

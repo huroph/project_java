@@ -37,5 +37,6 @@ public abstract class Main {
         controller.orderPerform(ControllerOrder.English);
         // TEST :
         System.out.println(model.getMap().getBlocks(5,5).type);
+        while(true);
     }
 }

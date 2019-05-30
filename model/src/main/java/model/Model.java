@@ -32,11 +32,6 @@ public final class Model extends Observable implements IModel {
 		this.player = new Player(startX,startY);
 	}
 
-
-
-
-
-
 	public Map getMap() {
 		return this.map;
 	}
@@ -114,6 +109,11 @@ public final class Model extends Observable implements IModel {
 		}).start();
 	}
 
+	@Override
+	public void score() {
+
+	}
+
 	/*public void score(){
 		if(player.getPosX() && player.getPosY() == BlockType.DIAMOND){
 			int i = score++;
@@ -124,9 +124,17 @@ public final class Model extends Observable implements IModel {
 	public void setTimer(int timer) {
 		this.timer = timer;
 	}
+	public void setscore(int score) {
+		this.score = score;
+	}
 
 	public int getTimer() {
 		return timer;
+	}
+
+	@Override
+	public int getscore() {
+		return 0;
 	}
 
 	public int getScore() {
@@ -158,19 +166,33 @@ public final class Model extends Observable implements IModel {
 			System.out.println(this.getPlayer().getPosX());
 		}
 	}
+	/*public void score() {
+		for (int y = 0; y < getMap().getHeight(); y++) {
+			for (int x = 0; x < getMap().getLenght(); x++) {
+				if ((getMap().getBlockTypeAt(x, y).equals(BlockType.DIAMOND)))
+					if (this.IndexPos(this.getPlayer().getPosX()) == x && this.IndexPos(this.getPlayer().getPosY()) == y) {
+						System.out.println("bb");
+						score++;
+					}
 
+			}
+
+		}
+
+
+}*/
 	//creuser-récuppérer
 	public void dig(){
-		/*if (this.getMap().getBlockTypeAt(this.IndexPos(this.getPlayer().getPosX()), this.IndexPos(this.getPlayer().getPosY())) == BlockType.DIAMOND) {
-			//nbrDIAMOND --;
-		}*/
+		if (this.getMap().getBlockTypeAt(this.IndexPos(this.getPlayer().getPosX()), this.IndexPos(this.getPlayer().getPosY())) == BlockType.DIAMOND) {
+			score++;
+			this.setscore(score);
+			System.out.println(score);
+			if ( score == 5 ){
 
+			}
+		}
 		this.getMap().setBlockTypeAt(this.IndexPos(this.getPlayer().getPosX()), this.IndexPos(this.getPlayer().getPosY()), BlockType.EMPTY);
-
 	}
-
-
-
 	//falling
 	public void scanFall(){
 				for(int y = 0; y<getMap().getHeight(); y++){
@@ -190,5 +212,6 @@ public final class Model extends Observable implements IModel {
 	}
 
 
-}
 
+
+}

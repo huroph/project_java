@@ -140,7 +140,7 @@ class ViewFrame extends JFrame implements KeyListener {
 		this.setSize(500, 500);
 		this.setLocationRelativeTo(null);
 
-		playMusic("src/mario.wav");
+		playMusic("src/GOT.wav");
 	}
 
 	private void playMusic(String filepath){
