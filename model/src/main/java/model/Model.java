@@ -220,6 +220,7 @@ public final class Model extends Observable implements IModel {
 					for(int x = 0;x<getMap().getLenght();x++){
 						if( (getMap().getBlockTypeAt(x,y).isFall()) && getMap().getBlockTypeAt(x,y+1).equals(BlockType.EMPTY) ){
 
+						    //si block en dessus d'un rocher ou diament est vide, alors rocher ou diamant tombe
 						    if(this.IndexPos(this.getPlayer().getPosX()) != x || this.IndexPos(this.getPlayer().getPosY()) != y+1) {
 
                                 getMap().setBlockTypeAt(x, y+1, getMap().getBlockTypeAt(x,y));
@@ -227,7 +228,25 @@ public final class Model extends Observable implements IModel {
 
                             }
 
+						    //si un joueur est deux block en dessous de deux blocks alors il meurt mais je crois que c'est pas ouf
+                            if(this.IndexPos(this.getPlayer().getPosX()) != x || this.IndexPos(this.getPlayer().getPosY()) != y+2) {
+
+                                //En gros il meurt mais je le ferai plus tard
+
+                            }
+
 						}
+
+						//conditions pour que les glissades des blocks
+                        if( (getMap().getBlockTypeAt(x,y).isFall()) && getMap().getBlockTypeAt(x+1,y).equals(BlockType.EMPTY) ){
+                            getMap().setBlockTypeAt(x+1, y, getMap().getBlockTypeAt(x,y));
+                            getMap().setBlockTypeAt(x, y, BlockType.EMPTY);
+                        }
+                        if( (getMap().getBlockTypeAt(x,y).isFall()) && getMap().getBlockTypeAt(x-1,y).equals(BlockType.EMPTY) ){
+                            getMap().setBlockTypeAt(x-1, y, getMap().getBlockTypeAt(x,y));
+                            getMap().setBlockTypeAt(x, y, BlockType.EMPTY);
+                        }
+
 					}
 				}
 	}
