@@ -238,11 +238,11 @@ public final class Model extends Observable implements IModel {
 						}
 
 						//conditions pour que les glissades des blocks
-                        if( (getMap().getBlockTypeAt(x,y).isFall()) && getMap().getBlockTypeAt(x+1,y).equals(BlockType.EMPTY) ){
+                        if( (getMap().getBlockTypeAt(x,y).isFall()) && getMap().getBlockTypeAt(x+1,y).equals(BlockType.EMPTY) && getMap().getBlockTypeAt(x+1,y+1).equals(BlockType.EMPTY) && (getMap().getBlockTypeAt(x,y+1).isFall()) ){
                             getMap().setBlockTypeAt(x+1, y, getMap().getBlockTypeAt(x,y));
                             getMap().setBlockTypeAt(x, y, BlockType.EMPTY);
                         }
-                        if( (getMap().getBlockTypeAt(x,y).isFall()) && getMap().getBlockTypeAt(x-1,y).equals(BlockType.EMPTY) ){
+                        if( (getMap().getBlockTypeAt(x,y).isFall()) && getMap().getBlockTypeAt(x-1,y).equals(BlockType.EMPTY) && getMap().getBlockTypeAt(x-1,y+1).equals(BlockType.EMPTY) && (getMap().getBlockTypeAt(x,y+1).isFall()) ){
                             getMap().setBlockTypeAt(x-1, y, getMap().getBlockTypeAt(x,y));
                             getMap().setBlockTypeAt(x, y, BlockType.EMPTY);
                         }
