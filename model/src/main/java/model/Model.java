@@ -228,7 +228,7 @@ public final class Model extends Observable implements IModel {
 
                             }
 
-						    //si un joueur est deux block en dessous de deux blocks alors il meurt mais je crois que c'est pas ouf
+						    //si un joueur est deux block en dessous du rocher alors il meurt mais je crois que c'est pas ouf
                             if(this.IndexPos(this.getPlayer().getPosX()) != x || this.IndexPos(this.getPlayer().getPosY()) != y+2) {
 
                                 //En gros il meurt mais je le ferai plus tard
