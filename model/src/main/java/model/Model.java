@@ -215,7 +215,7 @@ public final class Model extends Observable implements IModel {
 
 	}
 	//falling
-	public void scanFall(){
+	/*public void scanFall(){
 				for(int y = 0; y<getMap().getHeight(); y++){
 					for(int x = 0;x<getMap().getLenght();x++){
 						if( (getMap().getBlockTypeAt(x,y).isFall()) && getMap().getBlockTypeAt(x,y+1).equals(BlockType.EMPTY) ){
@@ -249,7 +249,7 @@ public final class Model extends Observable implements IModel {
 
 					}
 				}
-	}
+	}*/
 
 
 }
