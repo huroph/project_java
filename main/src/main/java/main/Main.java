@@ -7,6 +7,7 @@ package main;
 
 import contract.ControllerOrder;
 import controller.Controller;
+import model.Fall;
 import model.Model;
 import view.View;
 
@@ -37,6 +38,9 @@ public abstract class Main {
         controller.orderPerform(ControllerOrder.English);
         // TEST :
         System.out.println(model.getMap().getBlocks(5,5).type);
-        while(true);
+
+        Thread thread = new Thread(new Fall());
+        thread.start();
+
     }
 }

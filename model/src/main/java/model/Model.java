@@ -252,12 +252,4 @@ public final class Model extends Observable implements IModel {
 	}
 
 
-	/*Thread t = new Thread() {
-		public void run() {
-			System.out.println("Mon traitement");
-		}
-	};
-		t.start();*/
-
-
 }
