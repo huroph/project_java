@@ -7,11 +7,8 @@ package main;
 
 import contract.ControllerOrder;
 import controller.Controller;
-import model.Fall;
 import model.Model;
 import view.View;
-
-import java.io.File;
 
 /**
  * The Class Main.
@@ -39,7 +36,7 @@ public abstract class Main {
         // TEST :
         System.out.println(model.getMap().getBlocks(5,5).type);
 
-        Thread thread = new Thread(new Fall());
+        Thread thread = new Thread(new Model());
         thread.start();
 
     }
