@@ -1,38 +1,28 @@
 package model;
 
 import entity.BlockType;
-import entity.Map;
-import entity.Player;
 
 public class Fall implements Runnable {
+    private Model model;
 
-    private final int OFFSET = 16;
-    private Map map;
-    private Player player;
-
-    public Map getMap() {
-        return this.map;
-    }
-    public Player getPlayer(){return this.player;}
-    public int IndexPos(int realPos){ return realPos/OFFSET;}
 
     @Override
     public void run(){
         while(true){
-            for(int y = 0; y<getMap().getHeight(); y++){
-                for(int x = 0;x<getMap().getLenght();x++){
-                    if( (getMap().getBlockTypeAt(x,y).isFall()) && getMap().getBlockTypeAt(x,y+1).equals(BlockType.EMPTY) ){
+            for(int y = 0; y<model.getMap().getHeight(); y++){
+                for(int x = 0;x<model.getMap().getLenght();x++){
+                    if( (model.getMap().getBlockTypeAt(x,y).isFall()) && model.getMap().getBlockTypeAt(x,y+1).equals(BlockType.EMPTY) ){
 
                         //si block en dessus d'un rocher ou diament est vide, alors rocher ou diamant tombe
-                        if(this.IndexPos(this.getPlayer().getPosX()) != x || this.IndexPos(this.getPlayer().getPosY()) != y+1) {
+                        if(model.IndexPos(model.getPlayer().getPosX()) != x || model.IndexPos(model.getPlayer().getPosY()) != y+1) {
 
-                            getMap().setBlockTypeAt(x, y+1, getMap().getBlockTypeAt(x,y));
-                            getMap().setBlockTypeAt(x, y, BlockType.EMPTY);
+                            model.getMap().setBlockTypeAt(x, y+1, model.getMap().getBlockTypeAt(x,y));
+                            model.getMap().setBlockTypeAt(x, y, BlockType.EMPTY);
 
                         }
 
                         //si un joueur est deux block en dessous du rocher alors il meurt mais je crois que c'est pas ouf
-                        if(this.IndexPos(this.getPlayer().getPosX()) != x || this.IndexPos(this.getPlayer().getPosY()) != y+2) {
+                        if(model.IndexPos(model.getPlayer().getPosX()) != x || model.IndexPos(model.getPlayer().getPosY()) != y+2) {
 
                             //En gros il meurt mais je le ferai plus tard
 
@@ -41,13 +31,13 @@ public class Fall implements Runnable {
                     }
 
                     //conditions pour que les glissades des blocks
-                    if( (getMap().getBlockTypeAt(x,y).isFall()) && getMap().getBlockTypeAt(x+1,y).equals(BlockType.EMPTY) && getMap().getBlockTypeAt(x+1,y+1).equals(BlockType.EMPTY) && (getMap().getBlockTypeAt(x,y+1).isFall()) ){
-                        getMap().setBlockTypeAt(x+1, y, getMap().getBlockTypeAt(x,y));
-                        getMap().setBlockTypeAt(x, y, BlockType.EMPTY);
+                    if( (model.getMap().getBlockTypeAt(x,y).isFall()) && model.getMap().getBlockTypeAt(x+1,y).equals(BlockType.EMPTY) && model.getMap().getBlockTypeAt(x+1,y+1).equals(BlockType.EMPTY) && (model.getMap().getBlockTypeAt(x,y+1).isFall()) ){
+                        model.getMap().setBlockTypeAt(x+1, y, model.getMap().getBlockTypeAt(x,y));
+                        model.getMap().setBlockTypeAt(x, y, BlockType.EMPTY);
                     }
-                    if( (getMap().getBlockTypeAt(x,y).isFall()) && getMap().getBlockTypeAt(x-1,y).equals(BlockType.EMPTY) && getMap().getBlockTypeAt(x-1,y+1).equals(BlockType.EMPTY) && (getMap().getBlockTypeAt(x,y+1).isFall()) ){
-                        getMap().setBlockTypeAt(x-1, y, getMap().getBlockTypeAt(x,y));
-                        getMap().setBlockTypeAt(x, y, BlockType.EMPTY);
+                    if( (model.getMap().getBlockTypeAt(x,y).isFall()) && model.getMap().getBlockTypeAt(x-1,y).equals(BlockType.EMPTY) && model.getMap().getBlockTypeAt(x-1,y+1).equals(BlockType.EMPTY) && (model.getMap().getBlockTypeAt(x,y+1).isFall()) ){
+                        model.getMap().setBlockTypeAt(x-1, y, model.getMap().getBlockTypeAt(x,y));
+                        model.getMap().setBlockTypeAt(x, y, BlockType.EMPTY);
                     }
 
                 }
