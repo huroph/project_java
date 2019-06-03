@@ -25,10 +25,8 @@ public class Map extends Entity {
 
     /**
      * Instantiates a new hello map.
-     *
-     * @param id
-     *          the id
-     * @param height a int.
+     * the id
+     *  * @param height a int.
      * @param lenght a int.
      */
     public Map(final int mapID, final int height, final int lenght) {
