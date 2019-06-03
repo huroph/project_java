@@ -36,8 +36,6 @@ public abstract class Main {
         // TEST :
         System.out.println(model.getMap().getBlocks(5,5).type);
 
-        Thread thread = new Thread(new Model());
-        thread.start();
 
     }
 }
