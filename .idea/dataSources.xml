@@ -15,7 +15,7 @@
         <property name="yearIsDateType" value="false" />
       </driver-properties>
     </data-source>
-    <data-source source="LOCAL" name="MySQL - jpublankproject@localhost" uuid="6fb18ea4-951d-434c-ad7e-b6d2eb38c9db">
+    <data-source source="LOCAL" name="jpublankproject@localhost [2]" uuid="6fb18ea4-951d-434c-ad7e-b6d2eb38c9db">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
@@ -48,6 +48,78 @@
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
       <jdbc-url>jdbc:sqlite:C:\Users\33660\Desktop\JPU-BlankProject\diagram\jpublankproject.vpp.bak_000f</jdbc-url>
+      <driver-properties>
+        <property name="enable_load_extension" value="true" />
+      </driver-properties>
+    </data-source>
+    <data-source source="LOCAL" name="jpublankproject" uuid="85156aaa-4ab3-47aa-ab2a-f86f99fd57da">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\romeo\Documents\EXIA\PROJET\Projet 5 JAVA\project_java\diagram\jpublankproject.vpp</jdbc-url>
+      <driver-properties>
+        <property name="enable_load_extension" value="true" />
+      </driver-properties>
+    </data-source>
+    <data-source source="LOCAL" name="jpublankproject.vpp [2]" uuid="791be9b5-60e6-473a-8d0b-aef212bf1d99">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\romeo\Documents\EXIA\PROJET\Projet 5 JAVA\project_java\diagram\jpublankproject.vpp.bak_000f</jdbc-url>
+      <driver-properties>
+        <property name="enable_load_extension" value="true" />
+      </driver-properties>
+    </data-source>
+    <data-source source="LOCAL" name="jpublankproject.vpp [3]" uuid="b6684262-2121-473e-b0ba-360dfa05a29c">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\romeo\Documents\EXIA\PROJET\Projet 5 JAVA\project_java\diagram\jpublankproject.vpp.bak_001d</jdbc-url>
+      <driver-properties>
+        <property name="enable_load_extension" value="true" />
+      </driver-properties>
+    </data-source>
+    <data-source source="LOCAL" name="jpublankproject.vpp [4]" uuid="eb2df6c7-2b34-4c36-b7e7-da8580b261a6">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\romeo\Documents\EXIA\PROJET\Projet 5 JAVA\project_java\diagram\jpublankproject.vpp.vbak</jdbc-url>
+      <driver-properties>
+        <property name="enable_load_extension" value="true" />
+      </driver-properties>
+    </data-source>
+    <data-source source="LOCAL" name="jpublankproject [2]" uuid="e161b74e-1dd6-4d4b-8fdc-61497b00e88b">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\romeo\Documents\EXIA\PROJET\Projet 5 JAVA\project_java\diagram\jpublankproject.vpp~48</jdbc-url>
+      <driver-properties>
+        <property name="enable_load_extension" value="true" />
+      </driver-properties>
+    </data-source>
+    <data-source source="LOCAL" name="jpublankproject [3]" uuid="1395b581-16c7-494d-8168-21e1d1d986a3">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\romeo\Documents\EXIA\PROJET\Projet 5 JAVA\project_java\diagram\jpublankproject.vpp~49</jdbc-url>
+      <driver-properties>
+        <property name="enable_load_extension" value="true" />
+      </driver-properties>
+    </data-source>
+    <data-source source="LOCAL" name="jpublankproject [4]" uuid="eaf052c6-bf15-4333-86dd-e0c7ae39d2a0">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\romeo\Documents\EXIA\PROJET\Projet 5 JAVA\project_java\diagram\jpublankproject.vux</jdbc-url>
+      <driver-properties>
+        <property name="enable_load_extension" value="true" />
+      </driver-properties>
+    </data-source>
+    <data-source source="LOCAL" name="jpublankproject.vux" uuid="169f3417-d32f-4152-945c-2df07dc45199">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\romeo\Documents\EXIA\PROJET\Projet 5 JAVA\project_java\diagram\jpublankproject.vux.vbak</jdbc-url>
       <driver-properties>
         <property name="enable_load_extension" value="true" />
       </driver-properties>
