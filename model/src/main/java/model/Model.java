@@ -1,17 +1,17 @@
 package model;
 import java.sql.SQLException;
-import java.util.ArrayList;
+//import java.util.ArrayList;
 import java.util.Observable;
 
 import contract.IModel;
 
 import entity.*;
 
-import javax.swing.*;
+/*import javax.swing.*;
 import javax.swing.text.View;
 
 import static java.lang.Thread.sleep;
-import sun.audio.*;
+import sun.audio.*;*/
 
 public final class Model extends Observable implements IModel {
 	private final int OFFSET = 16;
@@ -24,7 +24,7 @@ public final class Model extends Observable implements IModel {
 	private int timer = 500;
 	private int score = 0;
 	private int endGame = 0;
-	private int sleep;
+
 	/**
 	 * Instantiates a new model.
 	 */
@@ -116,12 +116,13 @@ public final class Model extends Observable implements IModel {
 
 	}
 
-
-
 	@Override
-	public int getenGame() {
-		return endGame;
+	public int getendGame() {
+		return 0;
 	}
+
+
+
 
 	/*public void score(){
 		if(player.getPosX() && player.getPosY() == BlockType.DIAMOND){
@@ -130,10 +131,10 @@ public final class Model extends Observable implements IModel {
 	}*/
 
 
-	public void setTimer(int timer) {
+	private void setTimer(int timer) {
 		this.timer = timer;
 	}
-	public void setscore(int score) {
+	private void setscore(int score) {
 		this.score = score;
 	}
 
@@ -146,19 +147,15 @@ public final class Model extends Observable implements IModel {
 		return score;
 	}
 
-	public int getEndGame() {
+	/*public int getEndGame() {
 		return endGame;
-	}
-	public void setEndGame(int endGame) {
+	}*/
+	private void setEndGame(int endGame) {
 		this.endGame = endGame;
 	}
-
-
-
-
-	public void setScore(int score) {
+	/*public void setScore(int score) {
 		this.score = score;
-	}
+	}*/
 
 	// méthode music
 
@@ -166,7 +163,7 @@ public final class Model extends Observable implements IModel {
 	//Deplacements
 	public void verticalMove( int sens){
 		if (!this.getMap().getBlockTypeAt(this.IndexPos(this.getPlayer().getPosX()), this.IndexPos(this.getPlayer().getPosY() + sens)).isOpaque()) {
-			System.out.println(this.IndexPos((int) this.getPlayer().getPosX()) + " : " + this.IndexPos(this.getPlayer().getPosY() + sens));
+			System.out.println(this.IndexPos( this.getPlayer().getPosX()) + " : " + this.IndexPos(this.getPlayer().getPosY() + sens));
 			System.out.println(this.getPlayer().getPosY() + sens);
 			this.getPlayer().setPosY(this.getPlayer().getPosY() + sens);
 			System.out.println(this.getPlayer().getPosY());
@@ -175,7 +172,7 @@ public final class Model extends Observable implements IModel {
 
 	public void horizontalMove(int sens){
 		if (!this.getMap().getBlockTypeAt(this.IndexPos(this.getPlayer().getPosX() + sens), this.IndexPos(this.getPlayer().getPosY())).isOpaque()) {
-			System.out.println(this.IndexPos((int) this.getPlayer().getPosX() + sens) + " : " + this.IndexPos(this.getPlayer().getPosY()));
+			System.out.println(this.IndexPos( this.getPlayer().getPosX() + sens) + " : " + this.IndexPos(this.getPlayer().getPosY()));
 			System.out.println(this.getPlayer().getPosX() + sens);
 			this.getPlayer().setPosX(this.getPlayer().getPosX() + sens);
 			System.out.println(this.getPlayer().getPosX());
@@ -212,7 +209,6 @@ public final class Model extends Observable implements IModel {
 		this.setEndGame(endGame);
 
 	}
-
 	}
 	//falling
 	/*public void scanFall(){

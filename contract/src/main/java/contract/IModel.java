@@ -63,11 +63,11 @@ public interface IModel {
 	void score();
 
 
-	int getenGame();
+
 	int getTimer();
 	int getscore();
 
-	public void endGame();
+	 int getendGame();
 
 	public void verticalMove(int sens);
 	public void horizontalMove(int sens);

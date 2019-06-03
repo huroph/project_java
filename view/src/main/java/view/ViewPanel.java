@@ -17,7 +17,7 @@ class ViewPanel extends JPanel implements Observer {
 
 
 	private ViewFrame viewFrame;
-	private int timer = 500;
+
 
 
 	private static final long	serialVersionUID	= -998294702363713521L;
@@ -83,7 +83,7 @@ class ViewPanel extends JPanel implements Observer {
 		graphics.drawString("timer:"+viewFrame.getModel().getTimer(),10,340);
 		graphics.drawString("Score:"+viewFrame.getModel().getscore(),10,360) ;
 
-		if(viewFrame.getModel().getenGame() ==1){
+		if(viewFrame.getModel().getendGame() ==1){
 			viewFrame.printMessage("C'est gagner!!!");
 			viewFrame.dispose();
 		}

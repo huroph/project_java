@@ -64,10 +64,7 @@ public final class View implements IView, Runnable {
 		this.viewFrame.printMessage(message);
 	}
 
-	@Override
-	public void endFrame() {
-		this.viewFrame.dispose();
-	}
+
 
 	/*
 	 * (non-Javadoc)

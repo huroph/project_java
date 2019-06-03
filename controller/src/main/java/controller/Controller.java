@@ -4,8 +4,7 @@ import contract.ControllerOrder;
 import contract.IController;
 import contract.IModel;
 import contract.IView;
-import entity.BlockType;
-import entity.Player;
+
 
 /**
  * The Class Controller.
@@ -85,7 +84,7 @@ public final class Controller implements IController {
 			case NOTHING:
 				break;
 		}
-		this.model.endGame();
+		this.model.getendGame();
 		this.model.score();
         this.model.dig();
         //this.model.scanFall();
