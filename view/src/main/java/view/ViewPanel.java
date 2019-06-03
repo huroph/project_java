@@ -23,6 +23,11 @@ class ViewPanel extends JPanel implements Observer {
 	private static final long	serialVersionUID	= -998294702363713521L;
 
 
+	/**
+	 * <p>Constructor for ViewPanel.</p>
+	 *
+	 * @param viewFrame a {@link view.ViewFrame} object.
+	 */
 	public ViewPanel(final ViewFrame viewFrame) {
 		this.setViewFrame(viewFrame);
 		viewFrame.getModel().getObservable().addObserver(this);
@@ -37,11 +42,13 @@ class ViewPanel extends JPanel implements Observer {
 		this.viewFrame = viewFrame;
 	}
 
+	/** {@inheritDoc} */
 	public void update(final Observable arg0, final Object arg1) {
 		this.repaint();
 	}
 
 
+	/** {@inheritDoc} */
 	@Override
 	protected void paintComponent(final Graphics graphics) {
 		Graphics2D g2 = (Graphics2D)graphics;
@@ -87,10 +94,12 @@ class ViewPanel extends JPanel implements Observer {
 			viewFrame.printMessage("C'est gagner!!!");
 			viewFrame.dispose();
 		}
+
 		if(viewFrame.getModel().getTimer()<=0) {
 			viewFrame.printMessage("Game Over");
 			viewFrame.dispose();
 		}
+
 
 
 		repaint();

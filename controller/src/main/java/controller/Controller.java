@@ -8,6 +8,9 @@ import contract.IView;
 
 /**
  * The Class Controller.
+ *
+ * @author 33660
+ * @version $Id: $Id
  */
 public final class Controller implements IController {
 
@@ -67,6 +70,7 @@ public final class Controller implements IController {
 		this.model = model;
 	}
 
+	/** {@inheritDoc} */
 	public void orderPerform(final ControllerOrder controllerOrder) {
 		switch (controllerOrder) {
 			case UP:
@@ -84,7 +88,7 @@ public final class Controller implements IController {
 			case NOTHING:
 				break;
 		}
-		this.model.getendGame();
+		this.model.endGame();
 		this.model.score();
         this.model.dig();
         //this.model.scanFall();

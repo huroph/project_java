@@ -36,7 +36,7 @@ class ViewFrame extends JFrame implements KeyListener {
 	 *
 	 * @param model
 	 *          the model
-	 * @throws HeadlessException
+	 * @throws java.awt.HeadlessException
 	 *           the headless exception
 	 */
 	public ViewFrame(final IModel model) throws HeadlessException {
@@ -63,7 +63,7 @@ class ViewFrame extends JFrame implements KeyListener {
 	 *          the model
 	 * @param title
 	 *          the title
-	 * @throws HeadlessException
+	 * @throws java.awt.HeadlessException
 	 *           the headless exception
 	 */
 	public ViewFrame(final IModel model, final String title) throws HeadlessException {
@@ -172,6 +172,7 @@ class ViewFrame extends JFrame implements KeyListener {
 	 *
 	 * @see java.awt.event.KeyListener#keyTyped(java.awt.event.KeyEvent)
 	 */
+	/** {@inheritDoc} */
 	public void keyTyped(final KeyEvent e) {
 
 	}
@@ -181,6 +182,7 @@ class ViewFrame extends JFrame implements KeyListener {
 	 *
 	 * @see java.awt.event.KeyListener#keyPressed(java.awt.event.KeyEvent)
 	 */
+	/** {@inheritDoc} */
 	public void keyPressed(final KeyEvent e) {
 		this.getController().orderPerform(View.keyCodeToControllerOrder(e.getKeyCode()));
 	}
@@ -190,6 +192,7 @@ class ViewFrame extends JFrame implements KeyListener {
 	 *
 	 * @see java.awt.event.KeyListener#keyReleased(java.awt.event.KeyEvent)
 	 */
+	/** {@inheritDoc} */
 	public void keyReleased(final KeyEvent e) {
 
 	}

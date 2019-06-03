@@ -6,12 +6,24 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * <p>Player class.</p>
+ *
+ * @author 33660
+ * @version $Id: $Id
+ */
 public class Player extends Entity {
     private int posX, posY;
     private BufferedImage spriteSheet;
     private Image[] sprites;
     private int activeSprite;
 
+    /**
+     * <p>Constructor for Player.</p>
+     *
+     * @param x a int.
+     * @param y a int.
+     */
     public Player(final int x, final int y) {
         setPosX(x);
         setPosY(y);
@@ -52,22 +64,43 @@ public class Player extends Entity {
      * Getters.
      *
      * @return the id
+     * @param index a int.
      */
     public Image getPlayerSprites(int index) {
         return sprites[index];
     }
+    /**
+     * <p>Getter for the field <code>posX</code>.</p>
+     *
+     * @return a int.
+     */
     public int getPosX() {
         return posX;
     }
 
+    /**
+     * <p>Setter for the field <code>posX</code>.</p>
+     *
+     * @param posX a int.
+     */
     public void setPosX(int posX) {
         this.posX = posX;
     }
 
+    /**
+     * <p>Getter for the field <code>posY</code>.</p>
+     *
+     * @return a int.
+     */
     public int getPosY() {
         return posY;
     }
 
+    /**
+     * <p>Setter for the field <code>posY</code>.</p>
+     *
+     * @param posY a int.
+     */
     public void setPosY(int posY) {
         this.posY = posY;
     }
@@ -75,18 +108,40 @@ public class Player extends Entity {
 
 
 
+    /**
+     * <p>Setter for the field <code>sprites</code>.</p>
+     *
+     * @param sprites an array of {@link java.awt.Image} objects.
+     */
     public void setSprites(Image[] sprites) {
         this.sprites = sprites;
     }
 
+    /**
+     * <p>Setter for the field <code>sprites</code>.</p>
+     *
+     * @param index a int.
+     * @param spritesImg a {@link java.awt.Image} object.
+     */
     public void setSprites(int index, Image spritesImg) {
         this.sprites[index] =  spritesImg;
     }
 
+    /**
+     * <p>setSpriteSize.</p>
+     *
+     * @param size a int.
+     */
     public void setSpriteSize(int size){
         this.sprites = new Image[size];
     }
 
+    /**
+     * <p>Getter for the field <code>sprites</code>.</p>
+     *
+     * @param index a int.
+     * @return a {@link java.awt.Image} object.
+     */
     public Image getSprites(int index) {
         return sprites[index];
     }

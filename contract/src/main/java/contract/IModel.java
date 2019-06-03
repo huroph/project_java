@@ -12,6 +12,7 @@ import javax.swing.*;
  * The Interface IModel.
  *
  * @author Jean-Aymeric Diet
+ * @version $Id: $Id
  */
 public interface IModel {
 
@@ -40,16 +41,29 @@ public interface IModel {
 	/**
 	 * Load the message.
 	 *
-	 * @param code
-	 *          the code
+	 * @param index a int.
+	 * @return a int.
 	 */
-
-
-
 	int RealPos(int index);
+	/**
+	 * <p>IndexPos.</p>
+	 *
+	 * @param realPos a int.
+	 * @return a int.
+	 */
 	public int IndexPos(int realPos);
 
+	/**
+	 * <p>setPlayer.</p>
+	 *
+	 * @param player a {@link entity.Player} object.
+	 */
 	public void setPlayer(final Player player);
+	/**
+	 * <p>getPlayer.</p>
+	 *
+	 * @return a {@link entity.Player} object.
+	 */
 	public Player getPlayer();
 
 	/**
@@ -59,20 +73,60 @@ public interface IModel {
 	 */
 	Observable getObservable();
 
+	/**
+	 * <p>timer.</p>
+	 */
 	void timer();
+	/**
+	 * <p>score.</p>
+	 */
 	void score();
+	/**
+	 * <p>endGame.</p>
+	 */
+	void endGame();
 
 
 
+	/**
+	 * <p>getTimer.</p>
+	 *
+	 * @return a int.
+	 */
 	int getTimer();
+	/**
+	 * <p>getscore.</p>
+	 *
+	 * @return a int.
+	 */
 	int getscore();
+	/**
+	 * <p>getendGame.</p>
+	 *
+	 * @return a int.
+	 */
+	int getendGame();
 
-	 int getendGame();
 
+	/**
+	 * <p>verticalMove.</p>
+	 *
+	 * @param sens a int.
+	 */
 	public void verticalMove(int sens);
+	/**
+	 * <p>horizontalMove.</p>
+	 *
+	 * @param sens a int.
+	 */
 	public void horizontalMove(int sens);
+	/**
+	 * <p>dig.</p>
+	 */
 	public void dig();
+
 	//public void scanFall();
+
 
 
 

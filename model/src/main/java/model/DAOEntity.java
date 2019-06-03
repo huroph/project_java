@@ -73,7 +73,7 @@ abstract class DAOEntity<E extends Entity> {
 	 *          the id
 	 * @return the e
 	 */
-	public abstract E find(int id);
+	public abstract E find(int mapID);
 
 	/**
 	 * Find.

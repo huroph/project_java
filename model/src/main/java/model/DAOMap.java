@@ -36,12 +36,12 @@ class DAOMap extends DAOEntity<Map> {
     }
 
     @Override
-    public Map find(int id) {
+    public Map find(int mapID) {
         Map map = new Map();
         try {
             final String sql = "{call map(?)}";
             final CallableStatement call = this.getConnection().prepareCall(sql);
-            call.setInt(1, id);
+            call.setInt(1, mapID);
             call.execute();
             final ResultSet resultSet = call.getResultSet();
 
@@ -53,7 +53,7 @@ class DAOMap extends DAOEntity<Map> {
                 System.out.println(line.get(nline));
                 nline++;
             }
-                map = new Map(id, nline,line.get(0).length());
+                map = new Map(mapID, nline,line.get(0).length());
             // Create map blocks
             for(int y = 0;y<nline;y++){
                 for(int x = 0;x<line.get(y).length();x++){
@@ -67,9 +67,6 @@ class DAOMap extends DAOEntity<Map> {
                             break;
                         case '.':
                             type = BlockType.DIRT;
-                            break;
-                        case '=':
-                            type = BlockType.WALL;
                             break;
                         case 'D':
                             type = BlockType.DIAMOND;
