@@ -25,7 +25,16 @@ public final class Model extends Observable implements IModel {
 	private int score = 0;
 	private int endGame = 0;
 	private boolean falling = false;
-	boolean dead = false;
+
+    public boolean isDead() {
+        return dead;
+    }
+
+    public void setDead(boolean dead) {
+        this.dead = dead;
+    }
+
+    private boolean dead = false;
 
 
 
@@ -235,14 +244,13 @@ public final class Model extends Observable implements IModel {
 						if( (getMap().getBlockTypeAt(x,y).isFall()) && getMap().getBlockTypeAt(x+1,y).equals(BlockType.EMPTY) && getMap().getBlockTypeAt(x+1,y+1).equals(BlockType.EMPTY) && (getMap().getBlockTypeAt(x,y+1).isFall()) ){
 							getMap().setBlockTypeAt(x+1, y, getMap().getBlockTypeAt(x,y));
 							getMap().setBlockTypeAt(x, y, BlockType.EMPTY);
-						}
-						if( (getMap().getBlockTypeAt(x,y).isFall()) && getMap().getBlockTypeAt(x-1,y).equals(BlockType.EMPTY) && getMap().getBlockTypeAt(x-1,y+1).equals(BlockType.EMPTY) && (getMap().getBlockTypeAt(x,y+1).isFall()) ) {
+						}else if( (getMap().getBlockTypeAt(x,y).isFall()) && getMap().getBlockTypeAt(x-1,y).equals(BlockType.EMPTY) && getMap().getBlockTypeAt(x-1,y+1).equals(BlockType.EMPTY) && (getMap().getBlockTypeAt(x,y+1).isFall()) ) {
 							getMap().setBlockTypeAt(x - 1, y, getMap().getBlockTypeAt(x, y));
 							getMap().setBlockTypeAt(x, y, BlockType.EMPTY);
-						}
-
+						}else
 
 						if( (getMap().getBlockTypeAt(x,y).isFall()) && getMap().getBlockTypeAt(x,y+1).equals(BlockType.EMPTY) ){
+							//si block en dessus d'un rocher ou diament est vide, alors rocher ou diamant tombe
 
 							//si block en dessous d'un rocher ou diament est vide, alors rocher ou diamant tombe
 						    if(this.IndexPos(this.getPlayer().getPosX()) != x || this.IndexPos(this.getPlayer().getPosY()) != y+1 )
@@ -250,14 +258,13 @@ public final class Model extends Observable implements IModel {
                                 getMap().setBlockTypeAt(x, y+1, getMap().getBlockTypeAt(x,y));
                                 getMap().setBlockTypeAt(x, y, BlockType.EMPTY);
                                 this.falling = true;
-
-                            }
+                            }else
 						    //si un joueur est deux block en dessous du rocher alors il meurt mais je crois que c'est pas ouf
                             if(this.IndexPos(this.getPlayer().getPosX()) == x && this.IndexPos(this.getPlayer().getPosY()) == y+1 && this.falling) {
                             	this.dead = true;
                             }
 
-						}
+						}else
 
 						if ( (getMap().getBlockTypeAt(x,y).isFall()) && getMap().getBlockTypeAt(x,y+1) != (BlockType.EMPTY) ){
 							this.falling = false;
@@ -275,6 +282,8 @@ public final class Model extends Observable implements IModel {
 
 
 						}*/
+
+
 
 					}
 				}

@@ -94,6 +94,7 @@ public interface IModel {
 	 * @return a int.
 	 */
 	int getTimer();
+	boolean isDead();
 	/**
 	 * <p>getscore.</p>
 	 *

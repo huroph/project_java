@@ -95,10 +95,16 @@ class ViewPanel extends JPanel implements Observer {
 			viewFrame.dispose();
 		}
 
-		if(viewFrame.getModel().getTimer()<=0) {
+		if( (viewFrame.getModel().getTimer()<=0) || (viewFrame.getModel().isDead()) ) {
 			viewFrame.printMessage("Game Over");
 			viewFrame.dispose();
 		}
+
+		/*
+		if(viewFrame.getModel().getdead()==1){
+			viewFrame.printMessage("Game Over");
+			viewFrame.dispose();
+		}*/
 
 
 
