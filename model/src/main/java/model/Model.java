@@ -269,7 +269,7 @@ public final class Model extends Observable implements IModel {
 						}else
 
 						if ( (getMap().getBlockTypeAt(x,y).isFall()) && getMap().getBlockTypeAt(x,y+1) != (BlockType.EMPTY) ){
-							this.falling = true;
+							this.falling = false;
 						}
 
 						/*if( (getMap().getBlockTypeAt(x,y).isFall()) && getMap().getBlockTypeAt(x,y+1).equals(BlockType.EMPTY) ){
